@@ -1,0 +1,88 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+// Styles da Index
+.books-wrapper{
+	width: 100%;
+}
+
+.card-book {
+  margin-top: 5%;
+}
+
+.card-book-body{
+  padding: 5% 0 5% 0;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;    
+}
+
+.card-book-divisor{
+  border: 1px solid #ccc;
+  width: 80%;
+  margin: 2% 0 5% 0;
+}
+
+// Styles da New
+.new-book-page-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;    
+}
+
+.book-form{
+    margin-top: 3%;
+    height: 85vh;
+    width: 80%;
+    padding: 1% 3% 3% 3%;
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+}
+
+.book-form-divisor{
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 90%;
+  margin: 2% 0 5% 0;
+}    
+
+.book-input {
+    border: none;
+    border-radius: 10px;
+    padding: 1% 1% 1% 1%;
+    background-color: #f2f2f2;
+    margin: 0 0 3% 5%;
+    width: 90%;
+}
+
+.book-save-button {
+    border: none;
+    border-radius: 10px;
+    padding: 1% 1% 1% 1%;
+    background-color: blue;
+    color: white;
+    margin: 0 0 3% 5%;
+    width: 90%;    
+}
+
+#selecao-arquivo {
+  display: none
+}
+
+.upload-book-button {
+  background-color: #3498db;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 6px 20px
+}
+
+
+
