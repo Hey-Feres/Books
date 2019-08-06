@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :set_category_options, only: [:new, :create, :edit, :update, :index]
    def index
       @books = Book.all.order("created_at desc")
    end
@@ -25,8 +26,12 @@ class BooksController < ApplicationController
    end
    
    private
+      def set_category_options
+         @category_options = ["Literatura", "Biografia", "Tecnologia", "Romance", "Fumec"]
+      end
+
       def book_params
-      params.require(:book).permit(:title, :attachment, :author, :cover, :resume, :subtitle)
+      params.require(:book).permit(:title, :attachment, :author, :cover, :resume, :subtitle, :category)
    end
    
 end

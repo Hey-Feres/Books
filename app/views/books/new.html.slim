@@ -13,6 +13,8 @@
         br
         = f.text_field :subtitle, placeholder: "Subtitle (Optional)", class: "book-input"
         br
+        = f.select("category", @category_options, { include_blank: 'Categoria'}, class: "book-input")
+        br
         = f.text_field :author, placeholder: "Author", class: "book-input"
         br
         = f.text_area :resume, placeholder: "Resume (Optional)", class: "book-input"
