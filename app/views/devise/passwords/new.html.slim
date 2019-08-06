@@ -1,0 +1,13 @@
+center
+  .devise-wrapper
+    h2 Esqueceu sua Senha?
+    .mt5
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'devise-input'
+      .actions
+        = f.submit "Enviar Instruções", class: 'devise-button'
+    .mt5
+    = render "devise/shared/links"
+
