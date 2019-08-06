@@ -1,0 +1,41 @@
+center
+  .login-wrapper
+    h2 Acessar
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: "devise-input"
+      .field
+        = f.password_field :password, autocomplete: "current-password", placeholder: 'Senha', class: "devise-input"
+      .actions
+        = f.submit "Acessar", class: 'devise-button'    
+    = render "devise/shared/links"
+
+css:
+  .login-wrapper{
+    margin-top: 3%;
+    width: 60%;
+    background-color: white;
+    padding: 2% 2% 2% 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+  }
+
+  .devise-input {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border: none;
+    padding: 1%;
+    width: 40%;
+    margin-top: 3%;
+  }
+
+  .devise-button {
+    background-color: blue;
+    border-radius: 10px;
+    border: none;
+    padding: 1%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 40%;
+    color: white;  
+  }
