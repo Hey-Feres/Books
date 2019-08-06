@@ -1,0 +1,5 @@
+nav.navbar.fixed-top.justify-content-between
+	 = link_to "Books", root_url, class: "navbar-brand"
+	 div
+		 = link_to "+", new_book_path, class: "navbar-add-book"
+		 = link_to ">", destroy_user_session_path, :method => :delete, class: "navbar-add-book"
