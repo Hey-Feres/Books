@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'bootstrap'
 gem 'slim'
 gem 'rails_db'
+gem 'devise'
 
 group :development, :test do
 
