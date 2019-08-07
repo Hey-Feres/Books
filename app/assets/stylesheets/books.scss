@@ -10,6 +10,7 @@
 
 .card-book {
   margin-top: 5%;
+  width: 250px;
 }
 
 .card-book-body{
@@ -72,6 +73,10 @@
 }
 
 #selecao-arquivo {
+  display: none
+}
+
+#selecao-capa {
   display: none
 }
 

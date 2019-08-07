@@ -6,13 +6,15 @@
     .row
       - @books.each do |book|
         .col-sm-3
-          .card.card-book style=("width: 250px;") 
+          .card.card-book
             = image_tag("#{book.cover}", size: "250x300")
             .card-body.card-book-body
               h4.card-title.text-center= book.title
-              p.card-text.text-center= book.author
+              p.card-text.text-center= book.author.truncate(20)
               center
                 .card-book-divisor
                 =link_to "Download", book.attachment_url, class: "btn btn-primary"
+                br
+                - if current_user.email == "brunoferesvillela@icloud.com"
+                  =link_to "Editar", edit_book_path(book)
                 /= button_to "Delete",  book, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{book.title} ?"
-

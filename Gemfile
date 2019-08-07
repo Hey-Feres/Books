@@ -18,6 +18,7 @@ gem 'bootstrap'
 gem 'slim'
 gem 'rails_db'
 gem 'devise'
+gem "font-awesome-rails"
 
 group :development, :test do
 
