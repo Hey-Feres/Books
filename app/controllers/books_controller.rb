@@ -17,7 +17,7 @@ class BooksController < ApplicationController
       @book = Book.new(book_params)
       
       if @book.save
-         redirect_to books_path, notice: "The book #{@book.title} has been saved."
+         redirect_to books_path, notice: "O livro #{@book.title} foi salvo. Obrigado :)"
       else
          render "new"
       end
@@ -27,7 +27,7 @@ class BooksController < ApplicationController
    def update
       respond_to do |format|
          if @book.update(book_params)
-            format.html { redirect_to books_url, notice: 'Book was successfully updated.' }
+            format.html { redirect_to books_url, notice: "O livro #{@book.title} foi atualizado. Obrigado :)" }
             format.json { render :show, status: :ok, location: books_url}
          else
             format.html { render :edit }
@@ -39,12 +39,12 @@ class BooksController < ApplicationController
    def destroy
       @book = Book.find(params[:id])
       @book.destroy
-      redirect_to books_path, notice:  "The book #{@book.title} has been removed."
+      redirect_to books_path, notice:  "O livro #{@book.title} foi removido!"
    end
    
    private
       def set_category_options
-         @category_options = ["Literatura", "Biografia", "Tecnologia", "Romance", "Fumec"]
+         @category_options = ["Literatura", "Biografia", "Tecnologia", "Romance", "Ficção"]
       end
 
       def set_book
