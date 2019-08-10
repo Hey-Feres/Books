@@ -6,28 +6,10 @@
   p= link_to "Contribua", new_book_path
 .books-wrapper
   h4.divisor Adicionados Recentemente
-  center
-    .row
-      - @books.each do |book|
-        = link_to book_path(book) do
-          .col-sm-3
-            .card.card-book.mr-2
-              = image_tag("#{book.cover}", size: "190x270")
+  = render "books/recentes"
 .books-wrapper
   h4.divisor Biografias
-  center
-    .row
-      - @biografias.each do |biografia|
-        = link_to book_path(biografia) do
-          .col-sm-3
-            .card.card-book.mr-2
-              = image_tag("#{biografia.cover}", size: "190x270")            
+  = render "books/biografias"
 .books-wrapper
   h4.divisor Literatura
-  center
-    .row
-      - @literaturas.each do |literatura|
-        = link_to book_path(literatura) do
-          .col-sm-3
-            .card.card-book.mr-2
-              = image_tag("#{literatura.cover}", size: "190x270")            
+  = render "books/literaturas"
