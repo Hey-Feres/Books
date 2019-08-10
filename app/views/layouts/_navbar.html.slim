@@ -1,5 +1,8 @@
 nav.navbar.fixed-top.justify-content-between
-	= link_to "Books", root_url, class: "navbar-brand"
+	= link_to root_url, class: "home-link" do
+		| Books
+      	sup
+        	span.badge.badge-danger.badge-counter Beta	
 	.d-flex
 		- if user_signed_in?
 			= link_to new_book_path do
@@ -8,3 +11,13 @@ nav.navbar.fixed-top.justify-content-between
 				= fa_icon "sign-out", class: "navbar-add-book mr-3"
 		- else 
 			= link_to "Join", new_registration_path(resource_name), class: "navbar-item"
+
+css:
+	.home-link{
+		color: white;
+		font-size: 1.5em;
+	}
+	.home-link:hover{
+		color: white;
+		text-decoration: none;
+	}
