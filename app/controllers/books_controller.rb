@@ -4,12 +4,23 @@ class BooksController < ApplicationController
 
    def index
       @books = Book.all.order("created_at desc")
-      @biografias = Book.where("category = 'Biografia'")
-      @literaturas = Book.where("category = 'Literatura'")
+      
+      @recentes = Book.all.order("created_at desc").limit(4)
+      @recentesAll = Book.all.order("created_at desc")
+
+      @biografias = Book.where("category = 'Biografia'").limit(4)
+      @biografiasAll = Book.where("category = 'Biografia'")
+
+      @literaturas = Book.where("category = 'Literatura'").limit(4)
+      @literaturasAll = Book.where("category = 'Literatura'")
    end
 
    def show
-   end      
+   end 
+
+   def show_all        
+      @all = Book.where("category = '#{params[:all]}'") 
+   end     
    
    def new
       @book = Book.new

@@ -1,0 +1,14 @@
+center
+  .row
+    - books.each do |book|
+      = link_to book_path(book) do
+        .col-sm-3
+          .card.card-book.mr-2
+            = image_tag("#{book.cover}", size: "190x270")
+	- if all.count > 4
+		= link_to show_all_path(all: all.first.category) do
+			.col-sm-3
+	          .card.card-book.card-all
+	          	= image_tag("https://blog.modernsetups.com/wp-content/uploads/2019/02/blue-pink-wallpaper-gradient-473x1024.jpg?x97945", size: "190x270")
+	          	.car-all-text
+	          		h4= "Mais #{all.count}"

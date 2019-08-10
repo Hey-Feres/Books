@@ -4,12 +4,12 @@
 .d-flex.justify-content-between.mr-4.ml-4.mt-2
   h5= "#{@books.count} livros, para todos!"
   p= link_to "Contribua", new_book_path
-.books-wrapper
-  h4.divisor Adicionados Recentemente
-  = render "books/recentes"
-.books-wrapper
-  h4.divisor Biografias
-  = render "books/biografias"
-.books-wrapper
-  h4.divisor Literatura
-  = render "books/literaturas"
+.books-wrapper.mt-3
+  h4.divisor.ml-3 Adicionados Recentemente
+  = render "books/books", books: @recentes, all: @recentesAll
+.books-wrapper.mt-3
+  h4.divisor.ml-3 Biografias
+  = render "books/books", books: @biografias, all: @biografiasAll
+.books-wrapper.mt-3
+  h4.divisor.ml-3 Literatura
+  = render "books/books", books: @literaturas, all: @literaturasAll

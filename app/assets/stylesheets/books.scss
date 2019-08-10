@@ -32,9 +32,13 @@
   left: 0;
   margin-left: 2%;
 }
+.card-book img {
+  border-radius: 7px;
+}
 
 .card-book {
   margin-top: 5%;
+  box-shadow: 10px 10px 10px #ccc;
   width: 190px;
   border: none;
 }
@@ -115,5 +119,16 @@
   padding: 6px 20px
 }
 
-
-
+// Styles da Show All
+.card-all{
+  position: relative;
+  text-align: center;
+  color: white; 
+  cursor: pointer;
+}
+.car-all-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
