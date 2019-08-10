@@ -8,11 +8,11 @@
   center
     .row
       - @books.each do |book|
-        .col-sm-3
+        .col-sm-2
           .card.card-book
-            = image_tag("#{book.cover}", size: "250x300")
-            .card-body.card-book-body
-              h4.card-title.text-center= book.title
+            = image_tag("#{book.cover}", size: "190x270")
+            /.card-body.card-book-body
+              h6.card-title.text-center= book.title
               p.card-text.text-center= book.author.truncate(20)
               center
                 .card-book-divisor

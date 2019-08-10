@@ -22,7 +22,7 @@
         /= f.text_field :cover, placeholder: "Cover Link", class: "book-input"
         center
             label.upload-book-button for="selecao-capa" Capa do Livro »
-            = f.file_field :attachment, id: "selecao-capa"        
+            = f.file_field :cover, id: "selecao-capa"        
         br
         center
             label.upload-book-button for="selecao-arquivo" Upload Book »
