@@ -1,0 +1,13 @@
+center
+            .card.card-book.mr-2
+              = image_tag("#{@book.cover}", size: "190x270")
+            .card-body.card-book-body
+              h6.card-title.text-center= @book.title
+              p.card-text.text-center= @book.author
+              center
+                .card-book-divisor
+                =link_to "Download", @book.attachment_url, class: "btn btn-primary"
+                br
+                - if current_user.email == "brunoferesvillela@icloud.com"
+                  =link_to "Editar", edit_book_path(@book)
+                /= button_to "Delete",  book, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{book.title} ?"

@@ -4,8 +4,33 @@
 @import "bootstrap";
 
 // Styles da Index
+.fixed{
+  position: fixed;
+}
+
+.divisor{
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
 .books-wrapper{
 	width: 100%;
+}
+
+.books-header{
+  position: fixed;
+}
+
+.books-header p {
+  position: fixed;
+  right: 0;
+  margin-right: 2%;
+}
+
+.books-header h5 {
+  position: fixed;
+  left: 0;
+  margin-left: 2%;
 }
 
 .card-book {

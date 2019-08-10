@@ -4,7 +4,12 @@ class BooksController < ApplicationController
 
    def index
       @books = Book.all.order("created_at desc")
+      @biografias = Book.where("category = 'Biografia'")
+      @literaturas = Book.where("category = 'Literatura'")
    end
+
+   def show
+   end      
    
    def new
       @book = Book.new
