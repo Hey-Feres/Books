@@ -5,8 +5,6 @@ nav.navbar.fixed-top.justify-content-between
         	span.badge.badge-danger.badge-counter Beta	
 	.d-flex
 		- if user_signed_in?
-			= link_to new_book_path do
-			 	= fa_icon "plus", class: "navbar-add-book mr-3"
 			= link_to destroy_user_session_path, :method => :delete do
 				= fa_icon "sign-out", class: "navbar-add-book mr-3"
 		- else 

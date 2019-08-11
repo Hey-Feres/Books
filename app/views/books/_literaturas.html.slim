@@ -1,8 +1,0 @@
-h4.divisor Literatura
-center
-  .row
-    - @literaturas.each do |literatura|
-      = link_to book_path(literatura) do
-        .col-sm-3
-          .card.card-book.mr-2
-            = image_tag("#{literatura.cover}", size: "190x270")            

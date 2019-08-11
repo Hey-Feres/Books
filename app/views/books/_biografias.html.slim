@@ -1,7 +1,0 @@
-center
-  .row
-    - @biografias.each do |biografia|
-      = link_to book_path(biografia) do
-        .col-sm-3
-          .card.card-book.mr-2
-            = image_tag("#{biografia.cover}", size: "190x270")
