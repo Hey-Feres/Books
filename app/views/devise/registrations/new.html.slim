@@ -1,0 +1,15 @@
+center
+  .devise-wrapper
+      h2 Join Us
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: "devise-input"
+        .field
+          = f.password_field :password, autocomplete: "new-password", placeholder: 'Senha', class: "devise-input"
+        .field
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirme sua Senha', class: "devise-input"
+        .actions
+          = f.submit "Join", class: 'devise-button'
+      .mt5    
+      = render "devise/shared/links"

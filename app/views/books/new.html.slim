@@ -1,0 +1,31 @@
+.new-book-page-wrapper
+    - if !@book.errors.empty?
+      .alert.alert-error
+        ul
+          - @book.errors.full_messages.each do |msg|
+            li= msg
+    .book-form
+      h2.text-center Adicionar
+      center
+        .book-form-divisor
+      = form_for @book, html: { multipart: true } do |f|
+        = f.text_field :title, placeholder: "Ttitulo", class: "book-input"
+        br
+        = f.text_field :subtitle, placeholder: "Subtitulo (Opcional)", class: "book-input"
+        br
+        = f.select("category", @category_options, { include_blank: 'Categoria'}, class: "book-input")
+        br
+        = f.text_field :author, placeholder: "Autor", class: "book-input"
+        br
+        = f.text_area :resume, placeholder: "Resumo (Opcional)", class: "book-input"
+        br
+        /= f.text_field :cover, placeholder: "Cover Link", class: "book-input"
+        center
+            label.upload-book-button for="selecao-capa" Capa do Livro »
+            = f.file_field :cover, id: "selecao-capa"        
+        br
+        center
+            label.upload-book-button for="selecao-arquivo" Upload Book »
+            = f.file_field :attachment, id: "selecao-arquivo"
+        br
+        = f.submit "Salvar", class: "book-save-button"

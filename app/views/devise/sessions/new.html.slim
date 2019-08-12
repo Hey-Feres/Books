@@ -1,0 +1,11 @@
+center
+  .devise-wrapper
+    h2 Acessar
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: "devise-input"
+      .field
+        = f.password_field :password, autocomplete: "current-password", placeholder: 'Senha', class: "devise-input"
+      .actions
+        = f.submit "Acessar", class: 'devise-button'    
+    = render "devise/shared/links"

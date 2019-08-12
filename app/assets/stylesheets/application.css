@@ -1,0 +1,56 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome 
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+body{
+	background-color: #f2f2f2;
+	padding-top: 5%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+select{-webkit-appearance:none;margin:0;}
+select,option{padding: 0.8% 2% 0.8% 2%;border:none;border-radius:10px;
+color:rgb(153, 153, 153);background-color:#f2f2f2;font-family:sans-serif;    
+-webkit-appearance:none;-moz-appearance:none;text-indent:1px;text-overflow:'';}
+
+.navbar{
+	background-color: black;
+}
+
+.navbar-brand, .navbar-brand:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.navbar-add-book, .navbar-add-book:hover {
+	color: white;
+	font-size: 1.5em;
+	text-decoration: none;
+	margin-right: 50%;
+}
+
+.navbar-signout, .navbar-signout:hover {
+	color: white;
+	font-size: 1.5em;	
+	text-decoration: none;
+}
+
+.navbar-item, .navbar-item:hover {
+	color: white;
+	text-decoration: none;	
+}

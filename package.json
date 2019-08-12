@@ -1,0 +1,8 @@
+{
+  "name": "books",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "turn.js": "^1.0.5"
+  }
+}
