@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'prawn', '2.2.2'
 gem 'carrierwave'
-gem 'bootstrap'
+gem 'bootstrap-sass'
 gem 'slim'
 gem 'rails_db'
 gem 'devise'
@@ -39,7 +39,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
 
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 

@@ -19,13 +19,18 @@
         br
         = f.text_area :resume, placeholder: "Resumo (Opcional)", class: "book-input"
         br
-        /= f.text_field :cover, placeholder: "Cover Link", class: "book-input"
-        center
+        .d-flex.justify-content-center
             label.upload-book-button for="selecao-capa" Capa do Livro »
             = f.file_field :cover, id: "selecao-capa"        
-        br
-        center
+
+            label.upload-book-button for="selecao-arquivo" Upload Book »
+            = f.file_field :attachment, id: "selecao-arquivo"                    
+        /center
+            label.upload-book-button for="selecao-capa" Capa do Livro »
+            = f.file_field :cover, id: "selecao-capa"        
+        /br
+        /center
             label.upload-book-button for="selecao-arquivo" Upload Book »
             = f.file_field :attachment, id: "selecao-arquivo"
-        br
+        .mt-5
         = f.submit "Salvar", class: "book-save-button"

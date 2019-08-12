@@ -6,7 +6,7 @@ class BooksController < ApplicationController
       @books = Book.all.order("created_at desc")
       
       @recente = Book.all.order("created_at desc").limit(4)
-      @recenteAll = Book.all.order("created_at >= ?", Date.today.at_beginning_of_week)
+      @recenteAll = Book.all.order("created_at desc")
 
       @biografia = Book.where("category = 'Biografia'").limit(4)
       @biografiaAll = Book.where("category = 'Biografia'")
