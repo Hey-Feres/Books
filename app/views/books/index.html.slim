@@ -1,18 +1,31 @@
 - if !flash[:notice].blank?
     .alert.alert-info
         = flash[:notice]
-.d-flex.justify-content-between.mr-4.ml-4.mt-2
-    h5= "#{@books.count} livros, para todos!"
+.status-bar
+    p= "#{@books.count} livros, para todos!"
     p= link_to "Contribua", new_book_path
 .books-wrapper.mt-3
-    h4.divisor.ml-3 Adicionados Recentemente
-    = render "books/books", books: @recente, all: @recenteAll
-.books-wrapper.mt-3
+    h4.divisor.ml-3 Todos
+    - @books.each do |book|
+        = link_to book_path(book) do
+            .col-sm-2 style="margin-bottom: 2%"
+                .card.card-book.mr-2
+                    = image_tag("#{book.cover}", size: "190x270", style:"border-radius: 5px")
+/.books-wrapper.mt-3
     h4.divisor.ml-3 Biografias
     = render "books/books", books: @biografia, all: @biografiaAll
-.books-wrapper.mt-3
+/.books-wrapper.mt-3
     h4.divisor.ml-3 Literatura
     = render "books/books", books: @literatura, all: @literaturaAll
-.books-wrapper.mt-3
+/.books-wrapper.mt-3
     h4.divisor.ml-3 Filosofia
     = render "books/books", books: @filosofia, all: @filosofiaAll  
+
+
+css:
+    .status-bar{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2%;
+        
+    }

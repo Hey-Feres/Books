@@ -9,6 +9,7 @@
       center
         .book-form-divisor
       = form_for @book, html: { multipart: true } do |f|
+        = f.hidden_field :user_id, value: 2
         = f.text_field :title, placeholder: "Ttitulo", class: "book-input"
         br
         = f.text_field :subtitle, placeholder: "Subtitulo (Opcional)", class: "book-input"
@@ -21,7 +22,7 @@
         br
         .d-flex.justify-content-center
             label.upload-book-button for="selecao-capa" Capa do Livro »
-            = f.file_field :cover, id: "selecao-capa"        
+            = f.file_field :cover, id: "selecao-capa"
 
             label.upload-book-button for="selecao-arquivo" Upload Book »
             = f.file_field :attachment, id: "selecao-arquivo"                    

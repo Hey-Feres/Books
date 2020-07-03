@@ -3,19 +3,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
    def index
-      @books = Book.all.order("created_at desc")
-      
-      @recente = Book.all.order("created_at desc").limit(4)
-      @recenteAll = Book.all.order("created_at desc")
-
-      @biografia = Book.where("category = 'Biografia'").limit(4)
-      @biografiaAll = Book.where("category = 'Biografia'")
-
-      @literatura = Book.where("category = 'Literatura'").limit(4)
-      @literaturaAll = Book.where("category = 'Literatura'")
-
-      @filosofia = Book.where("category = 'Filosofia'").limit(4)
-      @filosofiaAll = Book.where("category = 'Filosofia'")      
+      @books = Book.where(status: "approved").order("created_at desc")
    end
 
    def show
@@ -34,9 +22,12 @@ class BooksController < ApplicationController
    
    def create
       @book = Book.new(book_params)
-      
       if @book.save
-         redirect_to books_path, notice: "O livro #{@book.title} foi salvo. Obrigado :)"
+         if @book.status == "pending"
+            redirect_to books_path, notice: "O livro #{@book.title} foi enviado para aprovação. Obrigado :)"
+         else   
+            redirect_to books_path, notice: "O livro #{@book.title} foi salvo. Obrigado :)"
+         end
       else
          render "new"
       end
@@ -71,7 +62,7 @@ class BooksController < ApplicationController
       end
 
       def book_params
-      params.require(:book).permit(:title, :attachment, :author, :cover, :resume, :subtitle, :category)
+      params.require(:book).permit(:title, :attachment, :author, :cover, :resume, :subtitle, :category, :user_id)
    end
    
 end
