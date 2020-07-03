@@ -1,7 +1,15 @@
 class Book < ApplicationRecord
-  	mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
-  	mount_uploader :cover, BookCoverUploader # Tells rails to use this uploader for this model.
-	validates :title, presence: true # Make sure the owner's name is present.
+    enum status: { pending: "pending", approved: "approved" }
+
+    mount_uploader :attachment, AttachmentUploader
+  	mount_uploader :cover, BookCoverUploader
+	
+    validates :title, presence: true
+    validates :author, presence: true
+
+    belongs_to :user
+
+    alias_attribute :posted_by, :user
 
     def self.search(search)
     	if search
