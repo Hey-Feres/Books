@@ -5,9 +5,9 @@ class Book < ApplicationRecord
   	mount_uploader :cover, BookCoverUploader
 	
     validates :title, presence: true
-    validates :author, presence: true
 
     belongs_to :user
+    belongs_to :author
 
     alias_attribute :posted_by, :user
 

@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_category_options, only: [:new, :create, :edit, :update, :index]
+  before_action :set_options, only: [:new, :create, :edit, :update, :index]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
    def index
@@ -53,8 +53,9 @@ class BooksController < ApplicationController
    end
    
    private
-      def set_category_options
+      def set_options
          @category_options = ["Literatura", "Biografia", "Tecnologia", "Romance", "Ficção", "Juvenil", "Filosofia"]
+         @authors = Author.all.order(name: "asc").pluck(:name,:id)
       end
 
       def set_book
