@@ -1355,7 +1355,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   background-color: transparent;
   background-image: none;
   border-color: #e9ecef;
-  color: #212529;
+  border-width: 2px;
+  color: #e9ecef;
 }
 
 .btn-outline-light:hover {
