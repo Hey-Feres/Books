@@ -1,23 +1,8 @@
-header
-	p Booker
-	p= current_user.present? ? "Sair" : "Acessar"
-
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-4
+  img.mr-2 height="30" src="https://img.icons8.com/ios/30/000000/open-book.png"
+  a.navbar-brand href="#" Booker
 
 css:
-	header{
-		position:fixed;
-		width: 100%;
-		top: 0;
-		left: 0;
-		height: 40px;
-		background: #333;
-		padding: 0 2%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-	header p{
-		color: white;
-		font-size: 1.3em;
-		line-height: 40px;
-	}
+  nav{
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,.05);
+  }

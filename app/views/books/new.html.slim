@@ -1,37 +1,35 @@
-.new-book-page-wrapper
-    - if !@book.errors.empty?
-      .alert.alert-error
-        ul
-          - @book.errors.full_messages.each do |msg|
-            li= msg
-    .book-form
-      h2.text-center Adicionar
-      center
-        .book-form-divisor
-      = form_for @book, html: { multipart: true } do |f|
-        = f.hidden_field :user_id, value: 2
-        = f.text_field :title, placeholder: "Ttitulo", class: "book-input"
-        br
-        = f.text_field :subtitle, placeholder: "Subtitulo (Opcional)", class: "book-input"
-        br
-        = f.select("category", @category_options, { include_blank: 'Categoria'}, class: "book-input")
-        br
-        = f.select("author_id", @authors, { include_blank: 'Autor'}, class: "book-input")
-        br
-        = f.text_area :resume, placeholder: "Resumo (Opcional)", class: "book-input"
-        br
-        .d-flex.justify-content-center
-            label.upload-book-button for="selecao-capa" Capa do Livro »
-            = f.file_field :cover, id: "selecao-capa"
-
-            label.upload-book-button for="selecao-arquivo" Upload Book »
-            = f.file_field :attachment, id: "selecao-arquivo"                    
-        /center
-            label.upload-book-button for="selecao-capa" Capa do Livro »
-            = f.file_field :cover, id: "selecao-capa"        
-        /br
-        /center
-            label.upload-book-button for="selecao-arquivo" Upload Book »
-            = f.file_field :attachment, id: "selecao-arquivo"
-        .mt-5
-        = f.submit "Salvar", class: "book-save-button"
+- if !@book.errors.empty?
+    center
+        - @book.errors.full_messages.each_with_index do |msg,i|
+            .alert.alert-danger.alert-dismissible.fade.show role="alert" style="width: 40%; border-radius: 10px" id="#{i}"
+                button.close aria-label="Close" data-dismiss="alert" type="button" 
+                    span.close-alert id="#{i}" aria-hidden="true" ×
+                strong= msg
+center
+    .card.p-4 style="width: 40%"
+        h3.text-center.mt-3 Adicionar
+        = form_for @book, html: { multipart: true } do |f|
+            = f.hidden_field :user_id, value: 1
+            .mt-3
+            = f.text_field :title, placeholder: "Titulo", class: "form-control"
+            .mt-3
+            = f.text_field :subtitle, placeholder: "Subtitulo (Opcional)", class: "form-control"
+            .mt-3
+            = f.select("category", @category_options, { include_blank: 'Categoria'}, class: "custom-select w-100")
+            .mt-3
+            = f.select("author_id", @authors, { include_blank: 'Autor'}, class: "custom-select w-100")
+            .mt-3
+            = f.text_area :resume, placeholder: "Resumo (Opcional)", class: "form-control", rows: 5
+            .mt-3
+            fieldset
+                .custom-file.w-100
+                    = f.file_field :cover, id: "cover", class: "custom-file-input"
+                    label.custom-file-label for="cover" Selecione a Capa
+            .mt-3
+            fieldset
+                .custom-file.w-100
+                    = f.file_field :attachment, id: "arquivo", class: "custom-file-input"
+                    label.custom-file-label for="arquivo" Selecione o Livro (PDF)
+            .mt-5
+            center
+                button type="submit" class="btn btn-dark btn-pill mb-3" Salvar Livro

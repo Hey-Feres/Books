@@ -1,31 +1,37 @@
-- if !flash[:notice].blank?
-    .alert.alert-info
-        = flash[:notice]
-.status-bar
-    p= "#{@books.count} livros, para todos!"
-    p= link_to "Contribua", new_book_path
-.books-wrapper.mt-3
-    h4.divisor.ml-3 Todos
-    - @books.each do |book|
-        = link_to book_path(book) do
-            .col-sm-2 style="margin-bottom: 2%"
-                .card.card-book.mr-2
-                    = image_tag("#{book.cover}", size: "190x270", style:"border-radius: 5px")
-/.books-wrapper.mt-3
-    h4.divisor.ml-3 Biografias
-    = render "books/books", books: @biografia, all: @biografiaAll
-/.books-wrapper.mt-3
-    h4.divisor.ml-3 Literatura
-    = render "books/books", books: @literatura, all: @literaturaAll
-/.books-wrapper.mt-3
-    h4.divisor.ml-3 Filosofia
-    = render "books/books", books: @filosofia, all: @filosofiaAll  
-
-
+- 2.times do |i|
+    section
+        .section-header
+            div
+                h3.section-title Destaques
+                p.section-description Os livros mais lidos e bem avaliados
+            div
+                p.section-see-more Ver Mais
+        .p-4
+            .row
+                - 6.times do |i|
+                    .col-lg-2.col-md-2.col-sm-12
+                        .book
+                          .book-cover class="cover#{i+1}"
+                            .effect
+                            .light
+                          .book-inside.p-4
+                            p style="text-align: justify" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tempor incididunt ut labore et dol magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+/.blur
 css:
-    .status-bar{
-        display: flex;
-        justify-content: space-between;
-        padding: 0 2%;
-        
+    .blur{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(100px);
+        -webkit-backdrop-filter: blur(100px);
+        -moz-backdrop-filter: blur(100px);
+        -o-backdrop-filter: blur(100px);
     }
+javascript:
+    $(document).ready(function(){
+
+    })
