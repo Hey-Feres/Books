@@ -17,7 +17,17 @@ center
             .mt-3
             = f.select("category", @category_options, { include_blank: 'Categoria'}, class: "custom-select w-100")
             .mt-3
-            = f.select("author_id", @authors, { include_blank: 'Autor'}, class: "custom-select w-100")
+            .d-flex.justify-content-between
+                .w-50.mr-1
+                    = f.select("author_id", @authors, { include_blank: 'Autor'}, class: "custom-select w-100")
+                .w-50.ml-1
+                    input type='text' placeholder="Add Autor" class="form-control" id="add_author"
+            .mt-3
+            .d-flex.justify-content-between
+                .w-50.mr-1
+                    = f.select("collection_id", @collections, { include_blank: 'Coleção'}, class: "custom-select w-100")
+                .w-50.ml-1
+                    input type='text' placeholder="Add Coleção" class="form-control" id="add_collection"
             .mt-3
             = f.text_area :resume, placeholder: "Resumo (Opcional)", class: "form-control", rows: 5
             .mt-3
@@ -33,3 +43,51 @@ center
             .mt-5
             center
                 button type="submit" class="btn btn-dark btn-pill mb-3" Salvar Livro
+
+javascript:
+    $("#add_author").change(function(){
+        $.ajax({
+            method: "POST",
+            url: "/authors",
+            data: {author:
+                { 
+                    name: $("#add_author").val()
+                } 
+            }
+        })
+        .done(function(data){
+            let author_select = $('#book_author_id')
+            author_select.append(`<option value="${data.id}">${data.name}</option>`)
+            author_select.html($("option").sort(function (a, b) {
+                return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+            }))
+            $("#add_author").addClass("is-valid")
+        })
+        .fail(function(x,y,z){
+            $("#add_author").addClass("is-invalid")
+        });
+    })
+
+    $("#add_collection").change(function(){
+        $.ajax({
+            method: "POST",
+            url: "/collections",
+            data: {collection:
+                { 
+                    name: $("#add_collection").val()
+                } 
+            }
+        })
+        .done(function(data){
+            let collection_select = $('#book_collection_id')
+            collection_select.append(`<option value="${data.id}">${data.name}</option>`)
+            // select.html($("option").sort(function (a, b) {
+                // return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+            // }))
+            $("#add_collection").addClass("is-valid")
+        })
+        .fail(function(x,y,z){
+            $("#add_collection").addClass("is-invalid")
+        });
+    })
+

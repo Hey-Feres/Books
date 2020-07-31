@@ -1,8 +1,38 @@
+/.blur#reader
+    img#close-reader height="30" src="https://img.icons8.com/ios/25/FFFFFF/cancel.png"
+    embed src="#{url_for(@books[0].attachment.url)}" frameborder="0" type="application/pdf"
+/ul
+    - @books.each do |book|
+        /li= link_to book.title, url_for(book.attachment.url)
+        /img src="#{url_for(book.cover.url)}"
 section
     .section-header
         div
             h3.section-title Destaques
             p.section-description Os livros mais lidos e bem avaliados
+        div
+            p.section-see-more Ver Mais
+    .p-4
+        .row
+            - @books.each do |book|
+                .col-lg-2.col-md-2.col-sm-12
+                    .book
+                      .book-cover style="background: url( #{url_for(book.cover.url)} ); background-size: 100%;"
+                        .effect
+                        .light
+                      .book-inside.p-4
+                        p style="text-align: justify" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tempor incididunt ut labore et dol magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+/ 
+section.orange-section.h-400.centralize
+    h1.text-white Junte-se
+    h5.text-white.w-50.text-center Faça seu cadastro para poder continuar lendo de onde parou, adicionar favoritos, metas de leitura e muito mais!
+    button type="button" class="btn btn-outline-light btn-light btn-pill" Me Cadastrar
+/ 
+section
+    .section-header
+        div
+            h3.section-title Adicionados Recentemente
+            p.section-description Os livros estreantes no Booker. 
         div
             p.section-see-more Ver Mais
     .p-4
@@ -16,33 +46,70 @@ section
                       .book-inside.p-4
                         p style="text-align: justify" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tempor incididunt ut labore et dol magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 / 
-section.orange-section.h-400.centralize
-    h1.text-white Junte-se
-    h5.text-white.w-50.text-center Faça seu cadastro para poder continuar lendo de onde parou, adicionar favoritos, metas de leitura e muito mais!
-    button type="button" class="btn btn-outline-light btn-light btn-pill" Me Cadastrar
-/ 
-- 2.times do |i|
-    section
-        .section-header
-            div
-                h3.section-title Adicionados Recentemente
-                p.section-description Os livros estreantes no Booker. 
-            div
-                p.section-see-more Ver Mais
-        .p-4
+section.pb-5.pt-5
+    .section-header
+        div
+            h3.section-title Generos
+            p.section-description Encontre seus livros favoritos pelos generos
+        / div
+            p.section-see-more Ver Mais
+    .p-4
+        center        
             .row
-                - 6.times do |i|
-                    .col-lg-2.col-md-2.col-sm-12
-                        .book
-                          .book-cover class="cover#{i+1}"
-                            .effect
-                            .light
-                          .book-inside.p-4
-                            p style="text-align: justify" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tempor incididunt ut labore et dol magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                .col-6
+                    / Crime & Thrillers
+                    .d-flex.justify-content-between style="width: 95%"
+                        .d-flex.justify-content-start
+                            p.mr-2
+                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/book.png"
+                            p.ml-2 Crime & Thrillers
+                        p
+                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
+                    / Biography
+                    .d-flex.justify-content-between style="width: 95%"
+                        .d-flex.justify-content-start
+                            p.mr-2
+                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/steve-jobs.png"
+                            p.ml-2 Biography
+                        p
+                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
+                    / Ficção & Literatura
+                    .d-flex.justify-content-between style="width: 95%"
+                        .d-flex.justify-content-start
+                            p.mr-2
+                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/typewriter-without-paper.png"
+                            p.ml-2 Ficção & Literatura
+                        p
+                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
+                .col-6
+                    / Romance
+                    .d-flex.justify-content-between style="width: 95%"
+                        .d-flex.justify-content-start
+                            p.mr-2
+                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/novel.png"
+                            p.ml-2 Romance
+                        p
+                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
+                    / Computação & Internet
+                    .d-flex.justify-content-between style="width: 95%"
+                        .d-flex.justify-content-start
+                            p.mr-2
+                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/happy-mac.png"
+                            p.ml-2 Computação & Internet
+                        p
+                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
+                    / Todos os Generos
+                    .d-flex.justify-content-between style="width: 95%"
+                        .d-flex.justify-content-start
+                            p.mr-2
+                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/align-left.png"
+                            p.ml-2 Todos os Generos
+                        p
+                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
 section.blue-section.h-400.centralize
     h1.text-white Contate-nos
     h5.text-white.w-50.text-center Sugira alterações, correções ou envie seu feedback :)
-    button type="button" class="btn btn-outline-light btn-light btn-pill" Contato
+    button type="button" class="btn btn-outline-light btn-light btn-pill" Contato/
 
 css:
     .orange-section{
@@ -64,3 +131,36 @@ css:
         background-attachment: fixed;
         background-size: contain;
     }
+    embed{
+        position: absolute;
+        width: 40%;
+        height: 89%;
+        bottom: 5.5%;
+        left: 30%;
+    }
+    .blur{
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        -moz-backdrop-filter: blur(50px);
+        -o-backdrop-filter: blur(50px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height:100%;
+        width: 100%;
+        background: rgba(90,90,90,.7);
+        z-index: 9999;
+    }
+    #close-reader{
+        position: fixed;
+        top: 2%;
+        right: 2%;
+        cursor: pointer;
+    }
+
+javascript:
+    $(document).ready(function(){
+        $("#close-reader").click(function(){
+            $("#reader").hide(500);
+        })
+    })

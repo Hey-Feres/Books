@@ -13,12 +13,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'prawn', '2.2.2'
 gem 'carrierwave'
-gem 'bootstrap-sass'
 gem 'slim'
-gem 'rails_db'
 gem 'devise'
-gem "font-awesome-rails"
 gem 'slim-rails'
+gem 'poppler'
 
 group :development, :test do
 

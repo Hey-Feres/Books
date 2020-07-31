@@ -55,6 +55,7 @@ class BooksController < ApplicationController
         def set_options
             @category_options = ["Literatura", "Biografia", "Tecnologia", "Romance", "Ficção", "Juvenil", "Filosofia"]
             @authors = Author.all.order(name: "asc").pluck(:name,:id)
+            @collections = Collection.all.order(name: "asc").pluck(:name,:id)
         end
 
         def set_book
