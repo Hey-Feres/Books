@@ -8,6 +8,7 @@ class Book < ApplicationRecord
 
     belongs_to :user
     belongs_to :author
+    belongs_to :collection, optional: true
 
     alias_attribute :posted_by, :user
 

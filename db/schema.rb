@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_03_205915) do
+ActiveRecord::Schema.define(version: 2020_07_31_163639) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -30,8 +30,16 @@ ActiveRecord::Schema.define(version: 2020_07_03_205915) do
     t.string "status", default: "pending"
     t.integer "user_id"
     t.integer "author_id"
+    t.integer "collection_id"
     t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["collection_id"], name: "index_books_on_collection_id"
     t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "resenhas", force: :cascade do |t|
