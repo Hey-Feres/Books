@@ -1,31 +1,26 @@
+# frozen_string_literal: true
+
+##
+# Model that defines book methods
 class Book < ApplicationRecord
-    enum status: { pending: "pending", approved: "approved" }
+  enum status: { pending: 'pending', approved: 'approved' }
 
-    mount_uploader :attachment, AttachmentUploader
-  	mount_uploader :cover, BookCoverUploader
-	
-    validates :title, presence: true
+  mount_uploader :attachment, AttachmentUploader
+  mount_uploader :cover, BookCoverUploader
 
-    belongs_to :user
-    belongs_to :author
-    belongs_to :collection, optional: true
+  validates :title, presence: true
 
-    alias_attribute :posted_by, :user
+  belongs_to :user
+  belongs_to :author
+  belongs_to :collection, optional: true
 
-    before_save :check_self_approvment
+  alias_attribute :posted_by, :user
 
-    def self.search(search)
-    	if search
-    		where(["category LIKE ?", "%#{search}%"])
-    	else
-    		all
-    	end
-    end
+  before_save :check_self_approvment
 
-    private
-        def check_self_approvment
-            if self.posted_by.admin
-                self.status = "approved"
-            end
-        end
+  private
+
+  def check_self_approvment
+    self.status = 'approved' if posted_by.admin
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AttachmentUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -12,9 +14,10 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+
   # Add a white list of extensions which are allowed to be uploaded.
   def extension_whitelist
-    %w(pdf doc htm html docx)
+    %w[pdf doc htm html docx]
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
