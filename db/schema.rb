@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_163639) do
+ActiveRecord::Schema.define(version: 2020_11_14_191751) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_163639) do
     t.string "category"
     t.integer "author_id"
     t.integer "collection_id"
+    t.text "parsed_content"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["collection_id"], name: "index_books_on_collection_id"
   end

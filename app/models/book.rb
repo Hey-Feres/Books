@@ -12,4 +12,12 @@ class Book < ApplicationRecord
 
   belongs_to :author
   belongs_to :collection, optional: true
+
+  after_save :set_parsed_content
+
+  def set_parsed_content
+    return nil if !attachment.file.file.present?
+
+    update_column(:parsed_content, PDF::Reader.new(attachment.file.file).pages.map(&:text).join)
+  end
 end

@@ -1,9 +1,10 @@
-/.loading-page
+.loading-book
   img src="loaders/default.svg"
   center
     p.mt-3 Carregando seu Livro
 
-p= @reader.pages[12].number
+p= @reader.pages[13].number
+/ center
 #book
   .cover
 
@@ -13,48 +14,10 @@ h6= @reader.pages.count
 / p= @reader.pages.last.text
 
 javascript:
-	// Sample using dynamic pages with turn.js
-	// var numberOfPages = parseInt("#{@reader.pages.count}");
-
-	// // Adds the pages that the book will need
-	// function addPage(page, book) {
-	// 	// 	First check if the page is already in the book
-	// 	if (!book.turn('hasPage', page)) {
- //      console.log("******")
- //      console.log(page)
-	// 		// Create an element for this page
-	// 		var element = $('<div/>', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page}).html('<i class="loader"></i>');
-	// 		// If not then add the page
-	// 		book.turn('addPage', element, page);
-	// 		// Let's assum that the data is comming from the server and the request takes 1s.
-	// 		setTimeout(function(){
-	// 				element.html('<div class="data">Data for page '+page+'</div>');
-	// 		}, 1000);
-	// 	}
-	// }
-
-	// async function getPages (starting_at) {
- //    await $.ajax({
- //      method: "GET",
- //      url: `load_pages/${starting_at}`,
- //    })
- //    .done(function(data){
- //      console.log(data)
- //      return data
- //    })
- //    .fail(function(x,y,z){
- //      console.log(x)
- //      console.log(y)
- //      console.log(z)
- //    });
-	// }
-
 	$(window).ready(function(){
     let numberOfPages = parseInt("#{@reader.pages.count}");
 
     book = new Book(numberOfPages)
-
-    // book.getPages(15)
 
 		$('#book').turn({
 			acceleration: true,
@@ -73,83 +36,34 @@ javascript:
 					$('#page-number').val(page);
 				}
 			}
-		});
-		$('#number-pages').html(numberOfPages);
+		})
+
+		$('#number-pages').html(numberOfPages)
+
 		$('#page-number').keydown(function(e){
-			if (e.keyCode==13)
-				$('#book').turn('page', $('#page-number').val());
-		});
-	});
+			if (e.keyCode==13) {
+				$('#book').turn('page', $('#page-number').val())
+      }
+		})
+	})
 
 	$(window).bind('keydown', function(e){
-		if (e.target && e.target.tagName.toLowerCase()!='input')
-			if (e.keyCode==37)
-				$('#book').turn('previous');
-			else if (e.keyCode==39)
-				$('#book').turn('next');
-	});
+		if (e.target && e.target.tagName.toLowerCase()!='input') {
+			if (e.keyCode==37){
+				$('#book').turn('previous')
+      }
+			else if (e.keyCode==39){
+				$('#book').turn('next')
+      }
+    }
+	})
 
 css:
 	body{
-		background:#ccc;
+		background: url('backgrounds/table.svg');
 	}
-	#book{
-		width: 1000px;
-		height: 750px;
-	}
-
-	#book .turn-page{
-		background-color: white;
-	}
-
-	#book .cover{
-		background: url("#{ url_for(Book.first.cover.url) }");
-		background-size: cover;
-		background-size: 100% 100%;
-	}
-
-	#book .book-page{
-		text-align: justify;
-		font-size: 14px;
-    line-height: 24px;
-		color: #555;
-    padding: 4% 6%;
-	}
-
-	#controls{
-		width: 800px;
-		text-align: center;
-		margin: 20px 0px;
-		font: 30px arial;
-	}
-
-	#controls input, #controls label{
-		font:30px arial;
-	}
-
-	#book .odd{
-		background-image:-webkit-linear-gradient(left, #FFF 95%, #ddd 100%);
-		background-image:-moz-linear-gradient(left, #FFF 95%, #ddd 100%);
-		background-image:-o-linear-gradient(left, #FFF 95%, #ddd 100%);
-		background-image:-ms-linear-gradient(left, #FFF 95%, #ddd 100%);
-	}
-
-	#book .even{
-		background-image:-webkit-linear-gradient(right, #FFF 95%, #ddd 100%);
-		background-image:-moz-linear-gradient(right, #FFF 95%, #ddd 100%);
-		background-image:-o-linear-gradient(right, #FFF 95%, #ddd 100%);
-		background-image:-ms-linear-gradient(right, #FFF 95%, #ddd 100%);
-	}
-
-  .loading-page{
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  #book .cover{
+    background: url("#{ url_for(Book.first.cover.url) }");
+    background-size: cover;
+    background-size: 100% 100%;
   }

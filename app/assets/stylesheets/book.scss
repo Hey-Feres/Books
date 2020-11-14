@@ -1,0 +1,43 @@
+#book{
+  width: 1000px;
+  height: 750px;
+}
+
+#book .turn-page{
+  background-color: white;
+}
+
+#book .book-page{
+  text-align: justify;
+  font-size: 14px;
+  line-height: 24px;
+  color: #555;
+  padding: 4% 6%;
+}
+
+#book .odd{
+  background-image:-webkit-linear-gradient(left, #FFF 95%, #ddd 100%);
+  background-image:-moz-linear-gradient(left, #FFF 95%, #ddd 100%);
+  background-image:-o-linear-gradient(left, #FFF 95%, #ddd 100%);
+  background-image:-ms-linear-gradient(left, #FFF 95%, #ddd 100%);
+}
+
+#book .even{
+  background-image:-webkit-linear-gradient(right, #FFF 95%, #ddd 100%);
+  background-image:-moz-linear-gradient(right, #FFF 95%, #ddd 100%);
+  background-image:-o-linear-gradient(right, #FFF 95%, #ddd 100%);
+  background-image:-ms-linear-gradient(right, #FFF 95%, #ddd 100%);
+}
+
+.loading-book{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
