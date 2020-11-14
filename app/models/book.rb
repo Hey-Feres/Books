@@ -10,17 +10,6 @@ class Book < ApplicationRecord
 
   validates :title, presence: true
 
-  belongs_to :user
   belongs_to :author
   belongs_to :collection, optional: true
-
-  alias_attribute :posted_by, :user
-
-  before_save :check_self_approvment
-
-  private
-
-  def check_self_approvment
-    self.status = 'approved' if posted_by.admin
-  end
 end

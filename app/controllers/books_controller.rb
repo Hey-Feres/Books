@@ -57,10 +57,13 @@ class BooksController < ApplicationController
   end
 
   def load_pages
-    reader = PDF::Reader.new(open("#{root_url}#{Book.first.attachment.url}"))
+    reader = PDF::Reader.new(Book.first.attachment.file.file)
     pages = []
     10.times do |i|
-      pages << reader.pages[i + params[:starting_at].to_i]
+      pages << {
+        page: i + params[:starting_at].to_i,
+        page_content: reader.pages[i + params[:starting_at].to_i].text
+      }
     end
     render json: pages
   end

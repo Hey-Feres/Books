@@ -1,43 +1,61 @@
+/.loading-page
+  img src="loaders/default.svg"
+  center
+    p.mt-3 Carregando seu Livro
+
 p= @reader.pages[12].number
 #book
-	.cover
+  .cover
 
-/h1= @reader.pages.count
-/p= 	@reader.page(100)
+h6= @reader.pages.count
+/ p= @reader.page(100)
 / p= 	@reader.objects.inspect
-/p= @reader.pages.last.text
+/ p= @reader.pages.last.text
 
 javascript:
 	// Sample using dynamic pages with turn.js
-	var numberOfPages = parseInt("#{@reader.pages.count}");
-	// Adds the pages that the book will need
-	function addPage(page, book) {
-		// 	First check if the page is already in the book
-		if (!book.turn('hasPage', page)) {
-			// Create an element for this page
-			var element = $('<div/>', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page}).html('<i class="loader"></i>');
-			// If not then add the page
-			book.turn('addPage', element, page);
-			// Let's assum that the data is comming from the server and the request takes 1s.
-			setTimeout(function(){
-					element.html('<div class="data">Data for page '+page+'</div>');
-			}, 1000);
-		}
-	}
-	function getPages(starting_at){
-        $.ajax({
-            method: "GET",
-            url: `load_pages/${starting_at}`,
-        })
-        .done(function(data){
-            console.log(data)
-        })
-        .fail(function(x,y,z){
-            console.log(x)
-        });
-	}
+	// var numberOfPages = parseInt("#{@reader.pages.count}");
+
+	// // Adds the pages that the book will need
+	// function addPage(page, book) {
+	// 	// 	First check if the page is already in the book
+	// 	if (!book.turn('hasPage', page)) {
+ //      console.log("******")
+ //      console.log(page)
+	// 		// Create an element for this page
+	// 		var element = $('<div/>', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page}).html('<i class="loader"></i>');
+	// 		// If not then add the page
+	// 		book.turn('addPage', element, page);
+	// 		// Let's assum that the data is comming from the server and the request takes 1s.
+	// 		setTimeout(function(){
+	// 				element.html('<div class="data">Data for page '+page+'</div>');
+	// 		}, 1000);
+	// 	}
+	// }
+
+	// async function getPages (starting_at) {
+ //    await $.ajax({
+ //      method: "GET",
+ //      url: `load_pages/${starting_at}`,
+ //    })
+ //    .done(function(data){
+ //      console.log(data)
+ //      return data
+ //    })
+ //    .fail(function(x,y,z){
+ //      console.log(x)
+ //      console.log(y)
+ //      console.log(z)
+ //    });
+	// }
+
 	$(window).ready(function(){
-		// getPages(0)
+    let numberOfPages = parseInt("#{@reader.pages.count}");
+
+    book = new Book(numberOfPages)
+
+    // book.getPages(15)
+
 		$('#book').turn({
 			acceleration: true,
 			pages: numberOfPages,
@@ -48,8 +66,8 @@ javascript:
 				// Gets the range of pages that the book needs right now
 				var range = $(this).turn('range', page);
 				// Check if each page is within the book
-				for (page = range[0]; page<=range[1]; page++) 
-					addPage(page, $(this));
+				for (page = range[0]; page<=range[1]; page++)
+					book.addPage(page, $(this));
 				},
 				turned: function(e, page) {
 					$('#page-number').val(page);
@@ -62,6 +80,7 @@ javascript:
 				$('#book').turn('page', $('#page-number').val());
 		});
 	});
+
 	$(window).bind('keydown', function(e){
 		if (e.target && e.target.tagName.toLowerCase()!='input')
 			if (e.keyCode==37)
@@ -69,47 +88,39 @@ javascript:
 			else if (e.keyCode==39)
 				$('#book').turn('next');
 	});
+
 css:
 	body{
 		background:#ccc;
 	}
 	#book{
-		width:1000px;
-		height:750px;
+		width: 1000px;
+		height: 750px;
 	}
 
 	#book .turn-page{
-		background-color:white;
+		background-color: white;
 	}
 
 	#book .cover{
 		background: url("#{ url_for(Book.first.cover.url) }");
-		background-size:cover;
+		background-size: cover;
 		background-size: 100% 100%;
 	}
 
-	#book .loader{
-		background-image:url(loader.gif);
-		width:24px;
-		height:24px;
-		display:block;
-		position:absolute;
-		top:238px;
-		left:188px;
-	}
-
-	#book .data{
-		text-align:center;
-		font-size:40px;
-		color:#999;
-		line-height:500px;
+	#book .book-page{
+		text-align: justify;
+		font-size: 14px;
+    line-height: 24px;
+		color: #555;
+    padding: 4% 6%;
 	}
 
 	#controls{
-		width:800px;
-		text-align:center;
-		margin:20px 0px;
-		font:30px arial;
+		width: 800px;
+		text-align: center;
+		margin: 20px 0px;
+		font: 30px arial;
 	}
 
 	#controls input, #controls label{
@@ -129,3 +140,16 @@ css:
 		background-image:-o-linear-gradient(right, #FFF 95%, #ddd 100%);
 		background-image:-ms-linear-gradient(right, #FFF 95%, #ddd 100%);
 	}
+
+  .loading-page{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

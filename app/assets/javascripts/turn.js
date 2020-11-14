@@ -12,9 +12,9 @@
  * 1. Redistributions of source code must retain the above copyright
  * notice, this list of conditions and the following disclaimer.
  *
- * 2. Any redistribution, use, or modification is done solely for personal 
+ * 2. Any redistribution, use, or modification is done solely for personal
  * benefit and not for any commercial purpose or for monetary gain.
- * 
+ *
  **/
 
 (function($) {
