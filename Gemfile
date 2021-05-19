@@ -8,7 +8,7 @@ ruby '2.6.0'
 # Ruby on Rails is a full-stack web framework
 gem 'rails', '~> 5.2.3'
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 # Sass adapter for the Rails asset pipeline.
 gem 'sass-rails', '~> 5.0'
 # Uglifier minifies JavaScript files to be accessible in Ruby
