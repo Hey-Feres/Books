@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
+ruby '2.7.2'
 
 # Ruby on Rails is a full-stack web framework
 gem 'rails', '~> 5.2.3'
@@ -62,11 +62,6 @@ group :development do
   gem 'capistrano-rails', '~> 1.4', require: false
   # RuboCop is a Ruby code style checking and code formatting tool.
   gem 'rubocop'
-end
-
-group :production do
-  # A simple, fast Mysql library for Ruby, binding to libmysql
-  gem 'mysql2'
 end
 
 group :test do

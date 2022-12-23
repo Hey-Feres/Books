@@ -1,44 +1,34 @@
 section
-    .section-header
-        div
-            h3.section-title Destaques
-            p.section-description Os livros mais lidos e bem avaliados
-        div
-            p.section-see-more Ver Mais
-    .p-4
+    div style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1% 2%; margin: 0"
+        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start"
+            p style="font-size: 2rem; font-weight: bold; color: black; text-transform: uppercase; margin: 0" Destaques
+            p style="font-size: 1rem; color: grey; margin: 0" Os livros mais lidos e bem avaliados
+        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end"
+            p style="font-size: 1rem; font-weight: 400; color: darkorange; margin: 0" Ver Mais
+    div style="padding: 1% 2%"
         .row
             - @books.each do |book|
                 .col-lg-2.col-md-2.col-sm-12
-                    .book
-                      .book-cover style="background: url( #{url_for(book.cover.url)} ); background-size: 100%;"
-                        .effect
-                        .light
-                      .book-inside.p-4
-                        p style="text-align: justify; font-size: 8px"= PDF::Reader.new(book.attachment.file.file).pages.sample.text.truncate(960)
-/
+                    = render('books/thumbnail', book: book)
+
 section.orange-section.h-400.centralize
     h1.text-white Junte-se
     h5.text-white.w-50.text-center Faça seu cadastro para poder continuar lendo de onde parou, adicionar favoritos, metas de leitura e muito mais!
     button type="button" class="btn btn-outline-light btn-light btn-pill" Me Cadastrar
-/
+
 section
-    .section-header
-        div
-            h3.section-title Adicionados Recentemente
-            p.section-description Os livros estreantes no Booker.
-        div
-            p.section-see-more Ver Mais
-    .p-4
+    div style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1% 2%; margin: 0"
+        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start"
+            p style="font-size: 2rem; font-weight: bold; color: black; text-transform: uppercase; margin: 0" Adicionados Recentemente
+            p style="font-size: 1rem; color: grey; margin: 0" Os livros estreantes no Books.
+        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end"
+            p style="font-size: 1rem; font-weight: 400; color: darkorange; margin: 0" Ver Mais
+    div style="padding: 1% 2%"
         .row
-            - 6.times do |i|
+            - @recently_added.each do |book|
                 .col-lg-2.col-md-2.col-sm-12
-                    .book
-                      .book-cover class="cover#{i+1}"
-                        .effect
-                        .light
-                      .book-inside.p-4
-                        p style="text-align: justify" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm tempor incididunt ut labore et dol magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-/
+                    = render('books/thumbnail', book: book)
+
 section.pb-5.pt-5
     .section-header
         div

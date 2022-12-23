@@ -1,0 +1,53 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-section .home-header-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1% 2%;
+	margin: 0;
+}
+
+.home-section .section-header-container .section-title-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.home-section .section-header-container .section-title-container p.title {
+	font-size: 2rem;
+	font-weight: bold;
+	color: black;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.home-section .section-header-container .section-title-container p.subtitle {
+	font-size: 1rem;
+	color: gray;
+	margin: 0;
+}
+
+.home-section .section-header-container .section-see-more-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.home-section .section-header-container .section-see-more-container p.see-more {
+	font-size: 1rem;
+	font-weight: 400;
+	color: darkorange;
+	margin: 0;
+}
+
+.home-books-container {
+	padding: 1% 2%;
+}

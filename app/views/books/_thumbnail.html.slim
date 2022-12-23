@@ -1,0 +1,6 @@
+.book-thumbnail
+  .book-thumbnail-cover style="background: url( #{url_for(book[:cover])} )"
+    .effect
+    .light
+  .book-thumbnail-inside
+    p= book[:content_preview]
