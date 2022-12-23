@@ -9,7 +9,8 @@ section
         .row
             - @books.each do |book|
                 .col-lg-2.col-md-2.col-sm-12
-                    = render('books/thumbnail', book: book)
+                    = link_to book_path(book.id) do
+                        = render('books/thumbnail', book: book)
 
 section.orange-section.h-400.centralize
     h1.text-white Junte-se

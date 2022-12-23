@@ -89,7 +89,8 @@ $transition-time: 1s;
 
 .book-thumbnail-inside p {
   text-align: justify;
-  font-size: 8px
+  font-size: 8px;
+  color: black;
 }
 .book-thumbnail:hover .btn, .book-thumbnail:hover {
   opacity: 1;

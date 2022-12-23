@@ -1,6 +1,9 @@
 body {
   background: #f9f9f9
 }
+a {
+  text-decoration: none !important;
+}
 /* Section */
 section {
   background-image: linear-gradient(to bottom, #fff, #f2f2f2);
@@ -30,4 +33,41 @@ section {
 .section-see-more {
   line-height: 65px;
   color: #0067F4;
+}
+
+.dev-div {
+  border: 1px dashed black;
+}
+
+.button {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background: black;
+}
+
+.button:hover {
+  background: #333333
+}
+
+.white-button {
+  color: black;
+  background: white; 
+  border: 1px solid black;
+}
+
+.white-button:hover {
+  color: black;
+  background: #f9f9f9;
+}
+
+.admin-button {
+  color: black;
+  background: gray; 
+}
+
+.admin-button:hover {
+  background: darkgray;
 }
