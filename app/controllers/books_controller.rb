@@ -4,7 +4,7 @@
 # Controller that define books actions
 class BooksController < ApplicationController
   before_action :set_options, only: %i[new create edit update index]
-  before_action :set_book, only: %i[show edit update destroy]
+  before_action :set_book, only: %i[show edit update destroy read]
 
   def index
     @books = Book.where(status: 'approved').order('created_at desc')
@@ -57,15 +57,14 @@ class BooksController < ApplicationController
   end
 
   def load_pages
-    reader = PDF::Reader.new(Book.first.attachment.file.file)
-    pages = []
-    10.times do |i|
-      pages << {
-        page: i + params[:starting_at].to_i,
-        page_content: reader.pages[i + params[:starting_at].to_i].text
-      }
-    end
+    book = Book.find(params[:book_id])
+
+    pages = book.pages.offset(params[:offset].to_i).first(10)
+
     render json: pages
+  end
+
+  def read
   end
 
   private

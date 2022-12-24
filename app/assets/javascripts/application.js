@@ -17,3 +17,8 @@
 //= require turbolinks
 //= require_tree .
 
+const getScreenDimensions = () => {
+  const realWidth = window.screen.width
+  const realHeight = window.screen.height
+  return [realWidth, realHeight]
+}

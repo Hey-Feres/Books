@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :books
   resources :collections, except: %i[edit new]
   resources :authors, except: %i[edit new]
-  get 'load_pages/:starting_at', to: 'books#load_pages'
+  get 'read', to: 'books#read'
+  get 'load_pages', to: 'books#load_pages'
   root 'home#index'
 end

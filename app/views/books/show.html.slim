@@ -7,7 +7,7 @@ div style="width: 100%; display: flex; justify-content: space-evenly; align-item
       p style="margin: 4% 0 0 0; text-align: justify"= @book.resume
 
       div style="width: 70%; display: flex; justify-content: center; align-items: center; margin-top: 10%"
-        = link_to @book.attachment_url do
+        = link_to read_path id: @book.id do
           button.button.mx-2 Ler Agora
         = link_to @book.attachment_url do
           button.button.white-button.mx-2 Baixar
@@ -34,84 +34,3 @@ div style="width: 100%; display: flex; justify-content: space-evenly; align-item
         div.my-3
           p style="margin: 0; font-weight: bold" Bruno
           p style="margin: 0; text-align: justify" Hope we get along, I am Penny Christianson, I am glad that you came here. I used to live in Eritrea, a couple of days ago I moved to Wilwerwiltz. I am glad I chose this town. I want to tell you more, my work is all about cardiac physiologist, I have a personal life as well, I like lawn darts. What kind of music do you like?
-
-/ .d-flex.justify-content-center
-/   div.mr-5.mt-3
-/     = image_tag("#{@book.cover}", size: "190x270", class: "shadow cover")
-/     /h6.card-title.text-center.mt-2= @book.title
-/     /h6.card-title.text-center= @book.subtitle
-/   div.ml-5.mt-3.w-50.resume-wrapper.shadow
-/     h4.text-center.border-divisor Resumo
-/     h6.text-center= @book.resume
-/   div.ml-5.mt-3
-/     center
-/       =link_to "Download", @book.attachment_url, class: "btn btn-primary"  
-/       .mt-3
-/       /=link_to "Compartilhar", @book.attachment_url, class: "btn btn-primary"
-/       /.mt-3
-/       /=link_to "Get on Email", @book.attachment_url, class: "btn btn-primary"
-/       - if current_user.email == "brunoferesvillela@icloud.com"
-/         .mt-3
-/         =link_to "Editar", edit_book_path(@book), class: "btn btn-primary"        
-/         .mt-3
-/         = button_to "Delete", @book, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{@book.title} ?"      
-/ .mt-5
-/ .d-flex.justify-content-center
-/   div.mr-5.mt-3.book-info.shadow
-/     h5.card-title.text-center.mt-2= @book.title
-/     h6.card-title.text-center= @book.subtitle
-/     h6.card-title.text-center= @book.author
-/     .border-divisor    
-/     center 
-/       = image_tag("https://cdn.iconscout.com/icon/free/png-256/evaluation-five-star-rating-favorite-like-recommend-5-5524.png", size: "100x100")
-/       sup
-/         span.badge.badge-danger.badge-counter Breve    
-  
-/   div.ml-5.mt-3.w-50.resume-wrapper.shadow
-/     h4.text-center.resume-title Resumo
-/     h6.text-center= @book.resume    
-  
-/   div.ml-5.mt-3
-/     =link_to "Download", @book.attachment_url, class: "btn transparent"
-
-
-
-
-/ css:
-/   .cover{
-/     border-radius: 10px;
-/   }
-/   .border-divisor{border-bottom: 1px solid rgba(0,0,0,0.1)}
-/   .resume-wrapper{
-/     background-color: #fff; 
-/     border-radius: 10px;
-/     padding: 2%;
-/   }
-/  .resume-wrapper h6{
-/   line-height: 30px;  
-/   letter-spacing: 1px;
-/  }
-
-/   .book-info{
-/     height: 270px;
-/     width: 190px;
-/     background-color: #fff; 
-/     border-radius: 10px;
-/     padding: 2%;    
-/   }
-/   .transparent {
-/     color: transparent;
-/   }
-/ /center
-/             .card.card-book.mr-2
-/               = image_tag("#{@book.cover}", size: "190x270")
-/             .card-body.card-book-body
-/               h6.card-title.text-center= @book.title
-/               p.card-text.text-center= @book.author
-/               center
-/                 .card-book-divisor
-/                 =link_to "Download", @book.attachment_url, class: "btn btn-primary"
-/                 br
-/                 - if current_user.email == "brunoferesvillela@icloud.com"
-/                   =link_to "Editar", edit_book_path(@book)
-/                 = button_to "Delete",  book, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{book.title} ?"

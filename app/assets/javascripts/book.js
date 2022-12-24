@@ -1,59 +1,55 @@
 class Book {
-  constructor(number_of_pages) {
-    this.number_of_pages = number_of_pages
+  constructor(totalPages, bookdId, startingPage) {
+    this.totalPages = totalPages
+    this.bookdId = bookdId
+    this.startingPage = startingPage || 0
+    this.loadedPages = []
+    this.currentPage = 1
+    this.percentageRead = 0
   }
 
-  addPage (page, book) {
-    alert(page)
-    // First check if the page is already in the book
-    if (!book.turn('hasPage', page)) {
-      console.log("******")
-      console.log(page)
+  calculatePercentageRead() {
+    return ((this.currentPage / this.totalPages) * 100).toFixed() 
+  }
 
-      // Create an element for this page
-      var element = $('<div/>', {
-        'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page
-      }).html('<i class="loader"></i>')
+  fetchPages(offset, skipUiUpdate) {
+    offset ||= startingPage
+    const params = `book_id=${bookdId}&offset=${offset}`
+    const url = `load_pages?${params}`
 
-      // If not then add the page
-      book.turn('addPage', element, page)
+    $.get(url)
+    .then((response) => {
+      this.loadedPages = this.loadedPages.concat(response)
+      this.currentPage = 1
 
-      let starting_at = 15
+      if(skipUiUpdate) return
 
-      $.ajax({
-        method: "GET",
-        url: `load_pages/${starting_at}`,
-      })
-      .done(function(data){
-        console.log(data)
-        element.html(
-          `<div class='book-page'>
-            <p> ${data[0].page_content} </p>
-          </div>`
-        )
+      $("#leftPage").text(this.loadedPages[0].content)
+      $("#rightPage").text(this.loadedPages[1].content)
+      $("#percentageRead").text( `${this.calculatePercentageRead()}%` )
+      $("#paginationNumber").text( `${this.currentPage}/${this.totalPages}` )
+    })
+    .catch((error) => {
+      alert("Não foi possível carregar o livro")
+    })
+  }
 
-        $('.loading-book').hide()
-      })
-      .fail(function(x,y,z){
-        console.log(x)
-      })
+  advancePage() {
+    if (this.currentPage + 2 >= this.loadedPages.length) {
+      this.fetchPages(this.loadedPages[this.loadedPages.length-1].number)
     }
+    $("#leftPage").text(this.loadedPages[this.currentPage+1].content)
+    $("#rightPage").text(this.loadedPages[this.currentPage+2].content)
+    this.currentPage = this.currentPage + 2
+    $("#percentageRead").text( `${this.calculatePercentageRead()}%` )
+    $("#paginationNumber").text( `${this.currentPage}/${this.totalPages}` )
   }
 
-
-
+  backPage() {
+    $("#leftPage").text(this.loadedPages[this.currentPage-2].content)
+    $("#rightPage").text(this.loadedPages[this.currentPage-1].content)
+    this.currentPage = this.currentPage - 2
+    $("#percentageRead").text( `${this.calculatePercentageRead()}%` )
+    $("#paginationNumber").text( `${this.currentPage}/${this.totalPages}` )
+  }
 }
-
-// === Docs === //
-//
-// * Function addPage
-//   - Description
-//     Adds the pages that the book will need
-//   - Parameters
-//     - page
-//       The number of the page, it comes from 2 and 2
-//     - book
-//       The html element to append pages
-
-
-

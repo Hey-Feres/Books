@@ -12,12 +12,22 @@ class Book < ApplicationRecord
 
   belongs_to :author
   belongs_to :collection, optional: true
+  has_many :book_pages
 
-  after_save :set_parsed_content
+  alias_attribute :pages, :book_pages
 
-  def set_parsed_content
-    return nil if !attachment.file.file.present?
+  after_save :create_pages
 
-    update_column(:parsed_content, PDF::Reader.new(attachment.file.file).pages.map(&:text).join)
+  def create_pages
+    return unless attachment.file.file.present?
+
+    pages = PDF::Reader.new(attachment.file.file).pages.map{|page| {number: page.number, text: page.text}}
+    book_pages = []
+
+    pages.each do |page|
+      book_pages << BookPage.new(book_id: id, content: page[:text], number: page[:number])
+    end
+
+    BookPage.import book_pages
   end
 end

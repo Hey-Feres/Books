@@ -52,6 +52,12 @@ section {
   background: #333333
 }
 
+.circle-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 .white-button {
   color: black;
   background: white; 
@@ -61,6 +67,21 @@ section {
 .white-button:hover {
   color: black;
   background: #f9f9f9;
+}
+
+.discrete-button {
+  color: black;
+  backdrop-filter: blur(2px);
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.07);
+  -moz-backdrop-filter: blur(2px);
+  -o-backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+.discrete-button:hover {
+  background: rgba(255, 255, 255, 0.7); 
 }
 
 .admin-button {

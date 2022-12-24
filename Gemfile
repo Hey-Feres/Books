@@ -33,6 +33,8 @@ gem 'slim-rails'
 gem 'pdf-reader'
 # RailsAdmin is a engine that provides an interface for managing your data
 gem 'rails_admin'
+# Activerecord-Import is a library for bulk inserting data using ActiveRecord
+gem 'activerecord-import'
 
 group :development, :test do
   # Byebug is a Ruby debugger.
