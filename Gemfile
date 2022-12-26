@@ -35,6 +35,8 @@ gem 'pdf-reader'
 gem 'rails_admin'
 # Activerecord-Import is a library for bulk inserting data using ActiveRecord
 gem 'activerecord-import'
+# This is a gem to helper you quick create a share feature in you Rails apps.
+gem 'social-share-button'
 
 group :development, :test do
   # Byebug is a Ruby debugger.

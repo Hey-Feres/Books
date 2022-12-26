@@ -1,69 +1,11 @@
-.loading-book
-  img src="loaders/default.svg"
-  center
-    p.mt-3 Carregando seu Livro
-
-p= @reader.pages[13].number
-/ center
-#book
-  .cover
-
-h6= @reader.pages.count
-/ p= @reader.page(100)
-/ p= 	@reader.objects.inspect
-/ p= @reader.pages.last.text
-
-javascript:
-	$(window).ready(function(){
-    let numberOfPages = parseInt("#{@reader.pages.count}");
-
-    book = new Book(numberOfPages)
-
-		$('#book').turn({
-			acceleration: true,
-			pages: numberOfPages,
-			elevation: 50,
-			gradients: !$.isTouch,
-			when: {
-				turning: function(e, page, view) {
-				// Gets the range of pages that the book needs right now
-				var range = $(this).turn('range', page);
-				// Check if each page is within the book
-				for (page = range[0]; page<=range[1]; page++)
-					book.addPage(page, $(this));
-				},
-				turned: function(e, page) {
-					$('#page-number').val(page);
-				}
-			}
-		})
-
-		$('#number-pages').html(numberOfPages)
-
-		$('#page-number').keydown(function(e){
-			if (e.keyCode==13) {
-				$('#book').turn('page', $('#page-number').val())
-      }
-		})
-	})
-
-	$(window).bind('keydown', function(e){
-		if (e.target && e.target.tagName.toLowerCase()!='input') {
-			if (e.keyCode==37){
-				$('#book').turn('previous')
-      }
-			else if (e.keyCode==39){
-				$('#book').turn('next')
-      }
-    }
-	})
-
-css:
-	body{
-		background: url('backgrounds/table.svg');
-	}
-  #book .cover{
-    background: url("#{ url_for(Book.first.cover.url) }");
-    background-size: cover;
-    background-size: 100% 100%;
-  }
+section
+    div style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1% 2%; margin: 0"
+        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start"
+            p style="font-size: 2rem; font-weight: bold; color: black; text-transform: uppercase; margin: 0" Navegue
+            p style="font-size: 1rem; color: grey; margin: 0" Os livros mais lidos e bem avaliados
+    div style="padding: 1% 2%"
+        .row
+            - @books.each do |book|
+                .col-lg-2.col-md-2.col-sm-12
+                    = link_to book_path(book.id) do
+                        = render('books/thumbnail', book: book)

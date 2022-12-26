@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :books
 
   alias_attribute :books_posted, :books
+
+  def name
+    "Bruno"
+  end
 end

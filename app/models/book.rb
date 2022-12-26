@@ -12,6 +12,7 @@ class Book < ApplicationRecord
 
   belongs_to :author
   belongs_to :collection, optional: true
+  has_and_belongs_to_many :categories
   has_many :book_pages
 
   alias_attribute :pages, :book_pages

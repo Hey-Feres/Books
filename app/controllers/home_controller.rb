@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-##
-# Controller that define home actions
 class HomeController < ApplicationController
   BookStruct = Struct.new(:id, :title, :cover, :content_preview, keyword_init: true)
 
   def index
+    @categories = Category.first(9)
     @recently_added = []
     Book.last(3).each do |book|
       @recently_added << BookStruct.new(

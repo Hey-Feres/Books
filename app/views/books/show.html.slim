@@ -4,15 +4,24 @@ div style="width: 100%; display: flex; justify-content: space-evenly; align-item
       = image_tag("#{@book.cover}", size: "190x270", class: "shadow cover", style: "border-radius: 3px")
       p style="font-size: 1.5rem; font-weight: bold; margin: 2% 0 0 0"= @book.title
       p style="margin: 0"= @book.author.name
-      p style="margin: 4% 0 0 0; text-align: justify"= @book.resume
+      p style="margin: 4% 0 0 0; text-align: justify"= @book.resume.truncate(750)
 
       div style="width: 70%; display: flex; justify-content: center; align-items: center; margin-top: 10%"
-        = link_to read_path id: @book.id do
-          button.button.mx-2 Ler Agora
+        / = link_to read_path id: @book.id do
+        a onclick="alert('🔨 Ainda estamos trabalhando nessa funcionalidade.')"
+          button.button.mx-2.with-badge data-badge="Em Breve" Ler Online
         = link_to @book.attachment_url do
           button.button.white-button.mx-2 Baixar
-        = link_to @book.attachment_url do
-          button.button.white-button.mx-2 Compartilhar
+
+        #shareModal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true"]
+          .modal-dialog[role="document"]
+            .modal-content
+              .modal-header
+                h5#shareModalLabel.modal-title= "Compartilhar #{@book.title}"
+              center.py-5
+                = social_share_button_tag("Veja esse livro que encontrei no Books - #{@book.title}")
+        a
+          button.button.white-button.mx-2 data-toggle="modal" data-target="#shareModal" Compartilhar
     - if current_user.email == "brunoferesvillela@icloud.com"
       div.mt-4 style="width: 70%; display: flex; justify-content: center; align-items: center;"
         = link_to edit_book_path(@book) do

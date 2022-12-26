@@ -8,4 +8,17 @@ html
     = csrf_meta_tags
   body
   	= render "layouts/header"
+    - if notice
+      .notice.system-shadow
+        = notice
     = yield
+css:
+  .notice {
+    width: 20%;
+    padding: 1.2em 2em;
+    border-radius: 20px;
+    position: absolute;
+    top: 5em;
+    right: 2em;
+    font-weight: bold;
+  }

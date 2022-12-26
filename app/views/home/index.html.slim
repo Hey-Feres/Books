@@ -3,8 +3,6 @@ section
         div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start"
             p style="font-size: 2rem; font-weight: bold; color: black; text-transform: uppercase; margin: 0" Destaques
             p style="font-size: 1rem; color: grey; margin: 0" Os livros mais lidos e bem avaliados
-        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end"
-            p style="font-size: 1rem; font-weight: 400; color: darkorange; margin: 0" Ver Mais
     div style="padding: 1% 2%"
         .row
             - @books.each do |book|
@@ -22,74 +20,24 @@ section
         div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start"
             p style="font-size: 2rem; font-weight: bold; color: black; text-transform: uppercase; margin: 0" Adicionados Recentemente
             p style="font-size: 1rem; color: grey; margin: 0" Os livros estreantes no Books.
-        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end"
-            p style="font-size: 1rem; font-weight: 400; color: darkorange; margin: 0" Ver Mais
     div style="padding: 1% 2%"
         .row
             - @recently_added.each do |book|
                 .col-lg-2.col-md-2.col-sm-12
                     = render('books/thumbnail', book: book)
 
-section.pb-5.pt-5
-    .section-header
-        div
-            h3.section-title Generos
-            p.section-description Encontre seus livros favoritos pelos generos
-        / div
-            p.section-see-more Ver Mais
-    .p-4
-        center
-            .row
-                .col-6
-                    / Crime & Thrillers
-                    .d-flex.justify-content-between style="width: 95%"
-                        .d-flex.justify-content-start
-                            p.mr-2
-                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/book.png"
-                            p.ml-2 Crime & Thrillers
-                        p
-                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
-                    / Biography
-                    .d-flex.justify-content-between style="width: 95%"
-                        .d-flex.justify-content-start
-                            p.mr-2
-                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/steve-jobs.png"
-                            p.ml-2 Biography
-                        p
-                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
-                    / Ficção & Literatura
-                    .d-flex.justify-content-between style="width: 95%"
-                        .d-flex.justify-content-start
-                            p.mr-2
-                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/typewriter-without-paper.png"
-                            p.ml-2 Ficção & Literatura
-                        p
-                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
-                .col-6
-                    / Romance
-                    .d-flex.justify-content-between style="width: 95%"
-                        .d-flex.justify-content-start
-                            p.mr-2
-                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/novel.png"
-                            p.ml-2 Romance
-                        p
-                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
-                    / Computação & Internet
-                    .d-flex.justify-content-between style="width: 95%"
-                        .d-flex.justify-content-start
-                            p.mr-2
-                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/happy-mac.png"
-                            p.ml-2 Computação & Internet
-                        p
-                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
-                    / Todos os Generos
-                    .d-flex.justify-content-between style="width: 95%"
-                        .d-flex.justify-content-start
-                            p.mr-2
-                                img height="30" src="https://img.icons8.com/ios-filled/25/000000/align-left.png"
-                            p.ml-2 Todos os Generos
-                        p
-                            img height="15" src="https://img.icons8.com/ios-filled/15/000000/chevron-right.png"
+section
+    div style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1% 2%; margin: 0"
+        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start"
+            p style="font-size: 2rem; font-weight: bold; color: black; text-transform: uppercase; margin: 0" Gêneros
+            p style="font-size: 1rem; color: grey; margin: 0" Encontre seus livros favoritos por gênero.
+    div style="padding: 1% 2%"
+        .row
+            - @categories.each do |category|
+                .col-lg-4.col-md-4.col-sm-6
+                    div.system-shadow.system-shadow-hover style="background: white; width: 100%; display: flex; justify-content: flex-start; align-items: center; border-radius: 20px; padding: 5% 0; margin: 0 0 4% 0"
+                        img.mx-4 src="#{category.icon}" style="width: 50px"
+                        p style="margin: 0"= category.title
 section.blue-section.h-400.centralize
     h1.text-white Contate-nos
     h5.text-white.w-50.text-center Sugira alterações, correções ou envie seu feedback :)

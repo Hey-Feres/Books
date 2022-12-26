@@ -3,12 +3,22 @@
 ##
 # Controller that define books actions
 class BooksController < ApplicationController
+  BookStruct = Struct.new(:id, :title, :cover, :content_preview, keyword_init: true)
+
   before_action :set_options, only: %i[new create edit update index]
   before_action :set_book, only: %i[show edit update destroy read]
 
   def index
-    @books = Book.where(status: 'approved').order('created_at desc')
-    @reader = PDF::Reader.new(open("#{root_url}#{Book.first.attachment.url}"))
+    # @books = Book.where(status: 'approved').order('created_at desc')
+    @books = []
+    Book.all.each do |book|
+      @books << BookStruct.new(
+        id: book.id,
+        title: book.title,
+        cover: book.cover.url,
+        content_preview: PDF::Reader.new(book.attachment.file.file).pages.sample.text.truncate(960)
+      )
+    end
   end
 
   def show
