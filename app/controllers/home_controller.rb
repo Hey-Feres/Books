@@ -5,24 +5,7 @@ class HomeController < ApplicationController
 
   def index
     @categories = Category.first(9)
-    @recently_added = []
-    Book.last(3).each do |book|
-      @recently_added << BookStruct.new(
-        id: book.id,
-        title: book.title,
-        cover: book.cover.url,
-        content_preview: PDF::Reader.new(book.attachment.file.file).pages.sample.text.truncate(960)
-      )
-    end
-
-    @books = []
-    Book.all.each do |book|
-      @books << BookStruct.new(
-        id: book.id,
-        title: book.title,
-        cover: book.cover.url,
-        content_preview: PDF::Reader.new(book.attachment.file.file).pages.sample.text.truncate(960)
-      )
-    end
+    @books = Book.last(6)
+    @recently_added = @books
   end
 end

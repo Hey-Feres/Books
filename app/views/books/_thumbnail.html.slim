@@ -1,6 +1,32 @@
-.book-thumbnail
-  .book-thumbnail-cover style="background: url( #{url_for(book[:cover])} )"
-    .effect
-    .light
-  .book-thumbnail-inside
-    p= book[:content_preview]
+.modal.fade tabindex="-1" role="dialog" aria-labelledby="bookDetailsModalLabel" aria-hidden="true" id="bookDetailsModal"
+  .modal-dialog role="document"
+    .modal-content.bg-white style="height: 85vh; border-radius: 20px"
+      div style="width: 100%; display: flex; justify-content: flex-end; align-items: center; padding: 4% 4% 0 4%;"
+        img.close-button data-dismiss="modal"
+      div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 4% 2%; margin: 0 1%"
+        div style="width: 80%; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+          = image_tag("#{book.cover}", size: "190x270", class: "shadow cover", style: "border-radius: 3px")
+          p style="font-size: 1.5rem; font-weight: bold; margin: 2% 0 0 0"= book.title
+          p style="margin: 0"= book.author.name
+          p style="margin: 4% 0 0 0; text-align: justify"= book.resume.truncate(250)
+          p style="margin: 2% 0 0 0; color: blue" Ler Mais
+        div style="width: 80%; display: flex; justify-content: center; align-items: center; margin-top: 2em"
+          = link_to book.attachment_url, target: :_blank do
+            button.button.white-button.mx-2 Baixar
+          #shareModal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true"]
+            .modal-dialog[role="document"]
+              .modal-content.blurred-modal-content
+                .modal-header
+                  h5#shareModalLabel.modal-title= "Compartilhar #{book.title}"
+                center.py-5
+                  = social_share_button_tag("Veja esse livro que encontrei no Books - #{book.title}")
+          a
+            button.button.white-button.mx-2 data-toggle="modal" data-target="#shareModal" Compartilhar
+
+a type="button" data-toggle="modal" data-target="#bookDetailsModal"
+  .book-thumbnail
+    .book-thumbnail-cover style="background: url( #{url_for(book.cover.url)} )"
+      .effect
+      .light
+    .book-thumbnail-inside
+      p= PDF::Reader.new(book.attachment.file.file).pages.first.text.truncate(960)

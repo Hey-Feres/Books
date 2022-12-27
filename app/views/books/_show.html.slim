@@ -1,4 +1,18 @@
-div style="width: 100%; display: flex; justify-content: space-evenly; align-items: center; padding: 1% 2%; margin: 0;"
+.modal.fade[tabindex="-1" role="dialog" aria-labelledby="bookDetailsModalLabel#{book.id}" aria-hidden="true"] id="#bookDetailsModal#{book.id}"
+  .modal-dialog[role="document"]
+    .modal-content
+      /.modal-header
+        /div style="width: 80%; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+          = image_tag("#{@book.cover}", size: "190x270", class: "shadow cover", style: "border-radius: 3px")
+          p style="font-size: 1.5rem; font-weight: bold; margin: 2% 0 0 0"= @book.title
+          p style="margin: 0"= @book.author.name
+          p style="margin: 4% 0 0 0; text-align: justify"= @book.resume.truncate(750)
+        /h5#bookDetailsModalLabel.modal-title= "Compartilhar #{@book.title}"
+      /center.py-5
+/ a
+  button.button.white-button.mx-2 data-toggle="modal" data-target="#shareModal" Compartilhar
+
+/div style="width: 100%; display: flex; justify-content: space-evenly; align-items: center; padding: 1% 2%; margin: 0;"
   div style="height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1% 2%; margin: 0 1%; background: white; border-radius: 10px"
     div style="width: 80%; display: flex; flex-direction: column; justify-content: center; align-items: center;"
       = image_tag("#{@book.cover}", size: "190x270", class: "shadow cover", style: "border-radius: 3px")

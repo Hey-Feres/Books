@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'user/profile'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  resources :books
+  resources :books, except: %i[show]
   resources :collections, except: %i[edit new]
   resources :authors, except: %i[edit new]
 
