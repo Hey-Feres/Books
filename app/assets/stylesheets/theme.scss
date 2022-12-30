@@ -1,4 +1,6 @@
 $share-icon-size: 3em;
+$system-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
+$system-shadow-hover: 5px 5px 18px -3px rgba(199,199,199,.1);
 
 body {
   background: #f9f9f9
@@ -48,6 +50,7 @@ section {
   border: none;
   color: white;
   background: black;
+  transition: .5s;
 }
 
 .button:hover {
@@ -73,13 +76,25 @@ section {
 
 .white-button {
   color: black;
-  background: white; 
+  background: white;
   border: 1px solid black;
 }
 
 .white-button:hover {
   color: black;
   background: #f9f9f9;
+}
+
+.outline-white-button {
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+}
+
+.outline-white-button:hover {
+  color: black;
+  background: white;
+  border: 1px solid white;
 }
 
 .gray-button {
