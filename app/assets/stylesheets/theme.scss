@@ -1,136 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
 $system-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
 $system-shadow-hover: 5px 5px 18px -3px rgba(199,199,199,.1);
 $share-icon-size: 3em;
 
 body {
-  background: #f9f9f9
+  background: #F9F9F9;
 }
+
 a {
   text-decoration: none !important;
 }
-/* Section */
+
 section {
   background-image: linear-gradient(to bottom, #fff, #f2f2f2);
   padding: 2% 0;
   margin: 0;
-}
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 1%;
-  height: 65px;
-}
-.section-header div {
-  height: 65px;
-}
-.section-title, .section-description {
-  margin: 0;
-}
-.section-title {
-  color: #474A4D;
-  font-weight: bold;
-}
-.section-description {
-  color: #5A6169;
-}
-.section-see-more {
-  line-height: 65px;
-  color: #0067F4;
-}
-
-.dev-div {
-  border: 1px dashed black;
-}
-
-.button {
-  width: 150px;
-  height: 40px;
-  border-radius: 20px;
-  border: none;
-  color: white;
-  background: black;
-  transition: .5s;
-}
-
-.button:hover {
-  background: #333333
-}
-
-.close-button {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='lightgray' viewBox='0 0 30 30' width='90px' height='90px'%3E%3Cpath d='M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z'/%3E%3C/svg%3E");
-  width: 30px;
-  height: 30px;
-}
-
-.close-button:hover {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='0 0 30 30' width='90px' height='90px'%3E%3Cpath d='M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z'/%3E%3C/svg%3E");
-  cursor: pointer;
-}
-
-.circle-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.white-button {
-  color: black;
-  background: white;
-  border: 1px solid black;
-}
-
-.white-button:hover {
-  color: black;
-  background: #f9f9f9;
-}
-
-.outline-white-button {
-  color: white;
-  background: transparent;
-  border: 1px solid white;
-}
-
-.outline-white-button:hover {
-  color: black;
-  background: white;
-  border: 1px solid white;
-}
-
-.gray-button {
-  color: black;
-  background: #F9F9F9;
-  border: none;
-}
-
-.gray-button:hover {
-  color: black;
-  background: #F2F2F2;
-  border: none;
-}
-
-.discrete-button {
-  color: black;
-  backdrop-filter: blur(2px);
-  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.07);
-  -moz-backdrop-filter: blur(2px);
-  -o-backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  background: rgba(255, 255, 255, 0.5);
-  border: none;
-}
-
-.discrete-button:hover {
-  background: rgba(255, 255, 255, 0.7); 
-}
-
-.admin-button {
-  color: black;
-  background: gray; 
-}
-
-.admin-button:hover {
-  background: darkgray;
 }
 
 .system-shadow {
@@ -205,4 +90,12 @@ section {
 
 .modal-title {
   text-align: center;
+}
+
+.bg-blurred {
+  backdrop-filter: blur(30px);
+  -moz-backdrop-filter: blur(30px);
+  -o-backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  background: rgba(255,255,255,.4);
 }

@@ -1,3 +1,5 @@
+section.home-welcome-section
+
 section.home-section
     div.header
         p.title Destaques
@@ -8,10 +10,16 @@ section.home-section
                 .col-lg-2.col-md-2.col-sm-12
                     = render('books/thumbnail', book: book)
 
-section.home-info-section.orange-background
-    h1.title Junte-se
-    h5.body Faça seu cadastro para poder continuar lendo de onde parou, adicionar favoritos, metas de leitura e muito mais!
-    button.button.outline-white-button type="button" Me Cadastrar
+- if current_user
+    section.home-info-section.brown-background
+        h1.title Sua Estante
+        h5.body Encontre seus livros favoritos, leituras atuais, bookmarks e os livros que deseja ler!
+        button.button.outline-white-button type="button" Ver Estante
+- else
+    section.home-info-section.orange-background
+        h1.title Junte-se
+        h5.body Faça seu cadastro para poder continuar lendo de onde parou, adicionar favoritos, metas de leitura e muito mais!
+        button.button.outline-white-button type="button" Me Cadastrar
 
 section.home-section
     div.header
