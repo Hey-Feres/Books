@@ -3,6 +3,8 @@
 ##
 # Model that defines book methods
 class Book < ApplicationRecord
+  self.ignored_columns = %w(parsed_content)
+
   enum status: { pending: 'pending', approved: 'approved' }
 
   mount_uploader :attachment, AttachmentUploader
@@ -16,6 +18,8 @@ class Book < ApplicationRecord
   has_many :book_pages
 
   alias_attribute :pages, :book_pages
+
+  delegate :name, to: :author, prefix: true
 
   after_save :create_pages
 

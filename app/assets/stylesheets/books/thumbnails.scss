@@ -102,3 +102,72 @@ $transition-time: 1s;
 .book-thumbnail:hover .btn, .book-thumbnail:hover {
   opacity: 1;
 }
+
+.book-details-modal .modal-content {
+  background: #FFFFFF;
+  height: 85vh;
+  border-radius: 20px;
+}
+
+.book-details-modal .modal-content .close-modal-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 4% 4% 0 4%;
+}
+
+.book-details-modal .modal-content .book-details-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  margin: 0 1%;
+}
+
+.book-details-modal .modal-content .book-details-container .main-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-details-modal .modal-content .book-details-container .main-container #bookCover {
+  border-radius: 3px;
+  width: 190px;
+  height: 270px;
+}
+
+.book-details-modal .modal-content .book-details-container .main-container #bookTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 2% 0 0 0;
+  text-align: center;
+}
+
+.book-details-modal .modal-content .book-details-container .main-container #bookAuthor {
+  margin: 0
+}
+
+.book-details-modal .modal-content .book-details-container .main-container .book-resume-container {
+  margin: 4% 0 0 0;
+  height: 150px;
+  overflow-y: scroll;
+}
+
+.book-details-modal .modal-content .book-details-container .main-container .book-resume-container #bookResume {
+  text-align: justify;
+}
+
+.book-details-modal .modal-content .book-details-container .actions-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+

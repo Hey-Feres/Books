@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://use.typekit.net/pfm5khx.css");
 
 $system-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
 $system-shadow-hover: 5px 5px 18px -3px rgba(199,199,199,.1);
@@ -13,7 +13,7 @@ a {
 }
 
 section {
-  background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
   padding: 2% 0;
   margin: 0;
 }
@@ -90,12 +90,4 @@ section {
 
 .modal-title {
   text-align: center;
-}
-
-.bg-blurred {
-  backdrop-filter: blur(30px);
-  -moz-backdrop-filter: blur(30px);
-  -o-backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  background: rgba(255,255,255,.4);
 }
