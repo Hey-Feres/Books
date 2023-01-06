@@ -37,6 +37,8 @@ gem 'rails_admin'
 gem 'activerecord-import'
 # This is a gem to helper you quick create a share feature in you Rails apps.
 gem 'social-share-button'
+# Ransack will help you easily add searching to your Rails application, without any additional dependencies.
+gem 'ransack'
 
 group :development, :test do
   # Byebug is a Ruby debugger.

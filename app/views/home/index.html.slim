@@ -39,9 +39,10 @@ section.home-section
         .row
             - @categories.each do |category|
                 .col-lg-4.col-md-4.col-sm-6
-                    div.category-container
-                        img src="#{category.icon}"
-                        p= category.title
+                    = link_to books_path(q: { categories_id_eq: category.id })
+                        div.category-container
+                            img src="#{category.icon}"
+                            p= category.title
 
 section.home-info-section.blue-background
     h1.title Contate-nos

@@ -7,6 +7,13 @@ $(document).ready(function() {
     $("#bookResume").text(book.resume)
     $("#bookDownload").attr("href", book.attachment.url)
     $("#shareModalLabel").text(`Compartilhar ${book.title}`)
-    console.info(book)
+
+    // WIP
+    setTimeout(function(){
+      $(".add-book-shelf-button:visible").each(function(index){
+        // $(".add-book-shelf-button")[index].attr("data-book-id", book.id)
+        console.info($(this))
+      })
+    }, 300);
   })
 })

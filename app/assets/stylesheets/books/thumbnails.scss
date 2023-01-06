@@ -105,7 +105,7 @@ $transition-time: 1s;
 
 .book-details-modal .modal-content {
   background: #FFFFFF;
-  height: 85vh;
+  height: 90vh;
   border-radius: 20px;
 }
 
@@ -139,6 +139,9 @@ $transition-time: 1s;
   border-radius: 3px;
   width: 190px;
   height: 270px;
+  box-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
+  -webkit-box-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
+  -moz-box-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
 }
 
 .book-details-modal .modal-content .book-details-container .main-container #bookTitle {

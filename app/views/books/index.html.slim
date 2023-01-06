@@ -1,11 +1,8 @@
-section
-    div style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1% 2%; margin: 0"
-        div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start"
-            p style="font-size: 2rem; font-weight: bold; color: black; text-transform: uppercase; margin: 0" Navegue
-            p style="font-size: 1rem; color: grey; margin: 0" Os livros mais lidos e bem avaliados
-    div style="padding: 1% 2%"
-        .row
-            - @books.each do |book|
-                .col-lg-2.col-md-2.col-sm-12
-                    = link_to book_path(book.id) do
-                        = render('books/thumbnail', book: book)
+section style="padding-top: 5em;"
+  .header style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: .5% 2%;"
+    h1 Livros Encontrados
+  .content style="padding: 1% 2%;"
+    .row#booksContainer
+      - @books.each do |book|
+        .col-lg-2.col-md-2.col-sm-12
+          = render('books/thumbnail', book: book)
