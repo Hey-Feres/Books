@@ -1,6 +1,11 @@
 #bookDetailsModal.modal.fade.book-details-modal tabindex="-1" role="dialog" aria-labelledby="bookDetailsModalLabel" aria-hidden="true"
   .modal-dialog role="document"
-    .modal-content
+    .modal-content.load-error
+      div
+      .content
+        i.lni.lni-sad
+        span Algo deu errado.
+    .modal-content.load-success
       .close-modal-container
         img.close-button data-dismiss="modal"
       .book-details-container

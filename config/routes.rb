@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get 'load_pages', to: 'books#load_pages'
 
   get 'shelf_books/:id', to: 'shelf_books#show'
-  post 'shelf_books/create', to: 'shelf_books#create_and_destroy'
+  post 'shelf_books/create_or_destroy', to: 'shelf_books#create_and_destroy'
   root 'home#index'
 end

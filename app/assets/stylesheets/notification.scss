@@ -1,0 +1,23 @@
+.notification {
+	display: none;
+	background: white;
+	position: fixed;
+	top: 2em;
+	right: 2em;
+	padding: .7em 1em;
+	border-radius: 15px;
+	z-index: 9999;
+	width: 20em;
+}
+
+.notification .title {
+	font-size: 1em;
+	font-weight: 600;
+	margin: 0;
+}
+
+.notification .text {
+	font-size: .8em;
+	margin: 0;
+	font-weight: 500;
+}

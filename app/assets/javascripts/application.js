@@ -18,3 +18,28 @@
 //= require social-share-button
 //= require_self
 //= require_tree .
+
+const showNotification = (title, text) => {
+  $(".notification p.title").text(title)
+  $(".notification p.text").text(text)
+  $(".notification").addClass("animate__animated animate__slideInRight")
+  $(".notification").show()
+
+  setTimeout(function() {
+  	$(".notification").removeClass("animate__animated animate__slideInRight")
+    $(".notification").addClass("animate__animated animate__slideOutRight")
+    setTimeout(function() {
+      $(".notification").hide()
+      $(".notification p.title").text("")
+      $(".notification p.text").text("")
+      $(".notification").removeClass("animate__animated animate__slideOutRight")
+    }, 700)
+  }, 3000)
+}
+
+const runErrorAnimation = (el) => {
+	$(el).addClass("animate__animated animate__headShake")
+	setTimeout(function() {
+		$(el).removeClass("animate__animated animate__headShake")
+	}, 700)
+}

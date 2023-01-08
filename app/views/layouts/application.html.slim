@@ -3,6 +3,7 @@ html
   head
     meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
     link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet"
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     title Feres Books
 
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
@@ -10,17 +11,7 @@ html
     = csrf_meta_tags
   body
   	= render "layouts/header"
-    - if notice
-      .notice.system-shadow
-        = notice
+    .notification
+      p.title
+      p.text
     = yield
-css:
-  .notice {
-    width: 20%;
-    padding: 1.2em 2em;
-    border-radius: 20px;
-    position: absolute;
-    top: 5em;
-    right: 2em;
-    font-weight: bold;
-  }

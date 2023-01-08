@@ -6,15 +6,7 @@
 $(document).ready(function() {
   // Load Modal's Content
   $("a.open-book-details-modal").unbind("click").click(function() {
-    const dataBook = $(this).attr("data-book")
-    const book = JSON.parse(dataBook)
-    const url = `/shelf_books/${book.id}`
-
-    $.get(url)
-    .then(response => setBookShelfButtonsColor(response))
-    .catch(error   => console.log(error))
-
-    setModalContent(book)
+    loadBookDetails(this)
   })
 
   // On Modal Close
@@ -24,25 +16,7 @@ $(document).ready(function() {
 
   // Add Book to a Shelf
   $(".add-book-shelf-button").unbind("click").click(function(event) {
-    toggleLoader("show", this)
-
-    const url = "/shelf_books/create"
-
-    let data = {
-      shelf_book: {
-        book_id: $("#bookId").text(),
-        type: $(this).data("type")
-      }
-    }
-
-    $.post(url, data)
-    .then(response => {
-      setBookShelfButtonColor(this)
-      toggleLoader("hide", this)
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    runBookShelfRequest(this)
   })
 })
 
@@ -88,4 +62,53 @@ const toggleLoader = (toggleType, el) => {
     $(el).children(".loader").hide()
     $(el).children("i").show()
   }
+}
+
+const displayLoadError = () => {
+  $(".modal-content.load-error").css("display", "flex")
+  $(".modal-content.load-success").css("display", "none")
+}
+
+const loadBookDetails = (dataBookEl) => {
+  const dataBook = $(dataBookEl).attr("data-book")
+  const book = JSON.parse(dataBook)
+  const url = `/shelf_books/${book.id}`
+
+  $.get(url)
+  .then((response) => {
+    setBookShelfButtonsColor(response)
+    setModalContent(book)
+  })
+  .catch((error) => {
+    displayLoadError()
+  })
+}
+
+const runBookShelfRequest = (el) => {
+  toggleLoader("show", el)
+
+  const isCreateRequest = $(el).hasClass("white-button")
+  const url = "/shelf_books/create_or_destroy"
+  const data = {
+    shelf_book: {
+      book_id: $("#bookId").text(),
+      type: $(el).data("type")
+    }
+  }
+
+  $.post(url, data)
+  .then(response => {
+    setBookShelfButtonColor(el)
+    toggleLoader("hide", el)
+    if (isCreateRequest){
+      showNotification("Sucesso!", "Livro Adicionado a sua Estante.")
+    } else {
+      showNotification("Sucesso!", "Livro Removido da sua Estante.")
+    }
+  })
+  .catch(error => {
+    toggleLoader("hide", el)
+    runErrorAnimation(el)
+    showNotification("Algo Deu Errado", "Não foi possivel adicionar o livro a sua estante.")
+  })
 }
