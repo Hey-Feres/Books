@@ -1,0 +1,17 @@
+.loader {
+  display: none;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-top: 2px solid #000;
+  filter: invert(1);
+  mix-blend-mode: difference;
+  width: 22px;
+  height: 22px;
+  animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

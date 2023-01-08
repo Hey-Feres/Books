@@ -1,56 +1,7 @@
-#bookDetailsModal.modal.fade.book-details-modal tabindex="-1" role="dialog" aria-labelledby="bookDetailsModalLabel" aria-hidden="true"
-  .modal-dialog role="document"
-    .modal-content
-      .close-modal-container
-        img.close-button data-dismiss="modal"
-      .book-details-container
-        .main-container
-          img#bookCover
-          div style="width: 100%; padding: .8em .5em 0 .5em; display: flex; justify-content: center; align-items: center"
-            button.add-book-shelf-button.icon-button.white-button.mx-2 data-type="collection"
-              i.lni.lni-plus.bold
-            button.add-book-shelf-button.icon-button.white-button.mx-2 data-type="favorite" data-book-id="favorite"
-              i.lni.lni-star-filled
-            button.add-book-shelf-button.icon-button.white-button.mx-2 data-type="reading_list"
-              i.lni.lni-heart-filled
-          p#bookTitle
-          p#bookAuthor
-          .book-resume-container
-            p#bookResume
-        .actions-container
-          a#bookDownload target="_blank"
-            button.button.white-button.mx-2 Baixar
-          #shareModal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true"]
-            .modal-dialog[role="document"]
-              .modal-content.blurred-modal-content
-                .modal-header
-                  h5#shareModalLabel.modal-title Compartilhar
-                center.py-5
-                  = social_share_button_tag("Veja esse livro que encontrei no Open Books", desc: "Open Books")
-          a
-            button.button.white-button.mx-2 data-toggle="modal" data-target="#shareModal" Compartilhar
+= render "books/book_details_modal"
 
 a.open-book-details-modal type="button" data-toggle="modal" data-target="#bookDetailsModal" data-book="#{book.to_json}"
   .book-thumbnail
     .book-thumbnail-cover style="background: url( #{url_for(book.cover.url)} )"
       .effect
       .light
-    / .book-thumbnail-inside
-      p= PDF::Reader.new(book.attachment.file.file).pages.first.text.truncate(960)
-
-javascript:
-  // $(document).ready(() => {
-  //   $(".add-book-shelf-button").unbind('click').click(() => {
-  //     var myButtonVar = $(this).data('data-type');
-  //     console.info(myButtonVar);
-  //   })
-  // })
-
-  $(".add-book-shelf-button").unbind('click').click(function(event) {
-    // let body = {
-    //   book_id: ,
-    //   user_id: "#{current_user.id}"
-    // }
-    console.info($(this).data('type'));
-    console.info($(this).data('book-id'));
-  })

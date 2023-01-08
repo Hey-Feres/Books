@@ -1,14 +1,25 @@
 class ShelfBooksController < ApplicationController
   def show
+    @shelf_books = ShelfBook.where(book_id: params[:id], user_id: current_user.id)
+
+    render json: @shelf_books
   end
 
-  def create
-    @shelf_book = ShelfBook.new(shelf_book_params.merge(user_id: current_user.id))
+  def create_and_destroy
+    shelf_book = ShelfBook.where(book_id: shelf_book_params[:book_id], type: shelf_book_params[:type], user_id: current_user.id).last
 
-    if @shelf_book.save
-      render json: @shelf_book, status: :success
+    if shelf_book.present?
+      shelf_book.destroy
+
+      head :no_content
     else
-      render json: @shelf_book.errors, status: :unprocessable_entity
+      @shelf_book = ShelfBook.new(shelf_book_params.merge(user_id: current_user.id))
+
+      if @shelf_book.save
+        render json: @shelf_book, status: :created
+      else
+        render json: @shelf_book.errors, status: :unprocessable_entity
+      end
     end
   end
 

@@ -1,4 +1,6 @@
 class ShelfBook < ApplicationRecord
+  self.inheritance_column = 'kind'
+
   belongs_to :book
   belongs_to :user
 

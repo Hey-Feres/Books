@@ -22,8 +22,6 @@ $transition-time: 1s;
   border-radius: 3px;
   box-shadow: inset 4px 1px 3px #ffffff60, inset 0 -1px 2px #00000080;
   transition: transform .5s;
-  // transition: all $transition-time ease-in-out;
-  // -webkit-transition: all $transition-time ease-in-out;
 }
 
 .effect {
@@ -32,8 +30,6 @@ $transition-time: 1s;
   margin-left: 10px;
   border-left: 2px solid #00000010;
   background-image: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
-  // transition: all $transition-time ease;
-  // -webkit-transition: all $transition-time ease;
 }
 
 .light {
@@ -45,8 +41,6 @@ $transition-time: 1s;
   top: 0;
   right:0;
   opacity: .1;
-  // transition: all $transition-time ease;
-  // -webkit-transition: all $transition-time ease;
 }
 
 .book-thumbnail:hover { cursor:pointer; }
@@ -56,23 +50,7 @@ $transition-time: 1s;
   -o-transform: scale(1.1);
   transform: scale(1.1); 
 }
-// .book-thumbnail:hover .book-thumbnail-cover {
-//   transform: perspective(2000px) rotateY(-91deg);
-//   -webkit-transform: perspective(2000px) rotateY(-91deg);
-//   transform-style: preserve-3d;
-//   -webkit-transform-style: preserve-3d;
-//   box-shadow: 
-//     inset 4px 1px 3px #ffffff60,
-//     inset 0 -1px 2px #00000080,
-//     10px 0px 10px -5px #00000030
-// }
-// .book-thumbnail:hover .effect {
-//   width: 40px;
-// }
-// .book-thumbnail:hover .light {
-//   opacity: 1;
-//   width: 70%;
-// }
+
 .book-thumbnail-inside {
   width: calc(100% - 2px);
   height: 96%;
@@ -144,6 +122,14 @@ $transition-time: 1s;
   -moz-box-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
 }
 
+.book-details-modal .modal-content .book-details-container .main-container .bookShelfActionsContainer {
+  width: 100%;
+  padding: .8em .5em 0 .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .book-details-modal .modal-content .book-details-container .main-container #bookTitle {
   font-size: 1.5rem;
   font-weight: bold;
@@ -152,7 +138,11 @@ $transition-time: 1s;
 }
 
 .book-details-modal .modal-content .book-details-container .main-container #bookAuthor {
-  margin: 0
+  margin: 0;
+}
+
+.book-details-modal .modal-content .book-details-container .main-container #bookId {
+  display: none;
 }
 
 .book-details-modal .modal-content .book-details-container .main-container .book-resume-container {
@@ -172,5 +162,3 @@ $transition-time: 1s;
   align-items: center;
   margin-top: 2em;
 }
-
-

@@ -95,3 +95,8 @@ section {
 .bold {
   font-weight: bold;
 }
+
+.invert {
+  filter: invert(1);
+  mix-blend-mode: difference;
+}

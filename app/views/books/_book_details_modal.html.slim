@@ -1,0 +1,38 @@
+#bookDetailsModal.modal.fade.book-details-modal tabindex="-1" role="dialog" aria-labelledby="bookDetailsModalLabel" aria-hidden="true"
+  .modal-dialog role="document"
+    .modal-content
+      .close-modal-container
+        img.close-button data-dismiss="modal"
+      .book-details-container
+        .main-container
+          img#bookCover
+          .bookShelfActionsContainer
+            button.add-book-shelf-button.icon-button.white-button.mx-2 data-type="collection"
+              i#collectionIcon.lni.lni-plus.bold
+              .loader
+
+            button.add-book-shelf-button.icon-button.white-button.mx-2 data-type="favorite"
+              i#favoriteIcon.lni.lni-star-filled
+              .loader
+
+            button.add-book-shelf-button.icon-button.white-button.mx-2 data-type="reading_list"
+              i#readingListIcon.lni.lni-heart-filled
+              .loader
+
+          p#bookTitle
+          p#bookAuthor
+          p#bookId
+          .book-resume-container
+            p#bookResume
+        .actions-container
+          a#bookDownload target="_blank"
+            button.button.white-button.mx-2 Baixar
+          #shareModal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true"]
+            .modal-dialog[role="document"]
+              .modal-content.blurred-modal-content
+                .modal-header
+                  h5#shareModalLabel.modal-title Compartilhar
+                center.py-5
+                  = social_share_button_tag("Veja esse livro que encontrei no Open Books", desc: "Open Books")
+          a
+            button.button.white-button.mx-2 data-toggle="modal" data-target="#shareModal" Compartilhar

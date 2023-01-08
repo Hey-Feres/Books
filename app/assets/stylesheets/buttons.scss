@@ -21,6 +21,9 @@
 .icon-button {
   width: 40px;
   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
 }
 
@@ -33,6 +36,18 @@
 .white-button:hover {
   color: #000000;
   background: #F9F9F9;
+}
+
+.black-button {
+  color: #FFFFFF;
+  background: #000000;
+  border: 1px solid #FFFFFF;
+}
+
+.black-button:hover {
+  color: #FFFFFF;
+  background: #222222;
+  border: 1px solid #FFFFFF;
 }
 
 .outline-white-button {
