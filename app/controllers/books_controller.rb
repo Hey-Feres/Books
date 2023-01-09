@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-##
-# Controller that define books actions
 class BooksController < ApplicationController
+  before_action :set_query_params, only: %i[index]
   before_action :set_options, only: %i[new create edit update index]
   before_action :set_book, only: %i[show edit update destroy read]
 
@@ -64,6 +63,12 @@ class BooksController < ApplicationController
   end
 
   private
+
+  def set_query_params
+    return unless params[:search].present?
+
+    params[:q] = { title_cont: params[:search] }
+  end
 
   def set_options
     @category_options = %w[Literatura Biografia Tecnologia Romance Ficção Juvenil Filosofia]

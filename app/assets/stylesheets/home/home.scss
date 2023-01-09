@@ -12,6 +12,45 @@
 	background-position: center;
 }
 
+.home-welcome-section .search-field {
+	width: 25em;
+	padding: 1em 0;
+	font-size: 1.3em;
+	text-align: center;
+	background-color: rgba(255,255,255,.7);
+	backdrop-filter: blur(10px);
+	-o-backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 50px 0 0 50px;
+	border: none;
+}
+
+.home-welcome-section .search-field::placeholder {
+	color: #888888;
+}
+
+.home-welcome-section .search-field:focus {
+	outline: 0;
+}
+
+.home-welcome-section .search-button {
+	width: 5em;
+	padding: 1em 0;
+	font-size: 1.3em;
+	text-align: center;
+	background-color: rgba(255,255,255,.7);
+	backdrop-filter: blur(10px);
+	-o-backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 0 50px 50px 0;
+	border: none;
+	transition: .4s;
+}
+
+.home-welcome-section .search-button:hover {
+	background-color: rgba(255,255,255,.9);
+}
+
 .home-section .header {
 	width: 100%;
 	display: flex;

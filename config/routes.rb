@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   get 'user/profile'
   get 'read', to: 'books#read'
   get 'load_pages', to: 'books#load_pages'
-
   get 'shelf_books/:id', to: 'shelf_books#show'
+  get '/search', to: 'books#index'
+
   post 'shelf_books/create_or_destroy', to: 'shelf_books#create_and_destroy'
+
   root 'home#index'
 end
