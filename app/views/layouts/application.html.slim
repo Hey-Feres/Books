@@ -12,3 +12,10 @@ html
   body
   	= render "layouts/header"
     = yield
+
+javascript:
+  $(document).ready(function(){
+    const sessionCurrentUserId = parseInt($.session.get("currentUserId")) || null
+
+    if (sessionCurrentUserId) $.session.set("currentUserId", this.currentUserId)
+  })

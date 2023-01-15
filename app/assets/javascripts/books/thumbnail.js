@@ -69,22 +69,26 @@ const displayLoadError = () => {
   $(".modal-content.load-success").css("display", "none")
 }
 
-const loadBookDetails = (dataBookEl) => {
-  const dataBook = $(dataBookEl).attr("data-book")
-  const book = JSON.parse(dataBook)
-  const url = `/shelf_books/${book.id}`
+const loadBookDetails = dataBookEl => {
+  const book = JSON.parse($(dataBookEl).attr("data-book"))
 
-  $.get(url)
-  .then((response) => {
-    setBookShelfButtonsColor(response)
+  if($.session.get("currentUserId") == undefined){
+    $(".add-book-shelf-button").hide()
     setModalContent(book)
-  })
-  .catch((error) => {
-    displayLoadError()
-  })
+  } else {
+    const url = `/shelf_books/${book.id}`
+    $.get(url)
+    .then(response => {
+      setBookShelfButtonsColor(response)
+      setModalContent(book)
+    })
+    .catch(error => {
+      displayLoadError()
+    })
+  }
 }
 
-const runBookShelfRequest = (el) => {
+const runBookShelfRequest = el => {
   toggleLoader("show", el)
 
   const isCreateRequest = $(el).hasClass("white-button")

@@ -9,6 +9,11 @@ div.app-header
       a.open-profile-modal data-toggle="modal" data-target="#profileModal" data-profile="#{current_user.to_json}" Minha Conta
       / = link_to 'Minha Conta', user_profile_path
       = link_to 'Estante', new_user_session_path
-      = link_to 'Sair', destroy_user_session_path, method: :delete
+      = link_to 'Sair', destroy_user_session_path, method: :delete, id: 'signOutButton'
     - else
       = link_to 'Acessar', new_user_session_path
+
+javascript:
+  $("signOutButton").click(function(){
+    $.session.remove("currentUserId")
+  })

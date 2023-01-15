@@ -8,8 +8,6 @@ class ShelfBooksController < ApplicationController
   end
 
   def create_and_destroy
-    raise "Bananas" if true
-
     shelf_book = ShelfBook.where(book_id: shelf_book_params[:book_id], type: shelf_book_params[:type], user_id: current_user.id).last
 
     if shelf_book.present?
