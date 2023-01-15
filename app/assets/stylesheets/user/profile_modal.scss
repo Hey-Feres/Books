@@ -1,0 +1,98 @@
+.profile-modal .modal-content {
+  background: #FFFFFF;
+  height: 90vh;
+  border-radius: 20px;
+}
+
+.profile-modal .modal-content.load-success .close-modal-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 4% 4% 0 4%;
+}
+
+.profile-modal .modal-content.load-success .profile-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 2%;
+  margin: 0 1%;
+}
+
+.profile-modal .modal-content.load-success .profile-container .main-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-modal .modal-content.load-error {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-modal .modal-content.load-error .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-modal .modal-content.load-error .content i {
+  font-size: 10em;
+}
+
+.profile-modal .modal-content.load-error .content span {
+  margin: 1em 0;
+}
+
+.profile-modal .modal-content.load-success .profile-container .main-container #profileImage {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  box-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
+  -webkit-box-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
+  -moz-box-shadow: 5px 5px 18px -3px rgba(199,199,199,.5);
+}
+
+.profile-modal .modal-content.load-success .profile-container .main-container #profileName {
+  font-size: 1.5em;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.profile-modal .modal-content.load-success .profile-container .main-container #editProfileButton {
+  margin-top: .5em;
+  width: auto;
+  padding: 0 2em;
+}
+
+.profile-modal .modal-content.load-success .profile-container .main-container #editProfileButton i {
+  margin-right: .5em;
+}
+
+.profile-modal .modal-content.load-success .profile-container .main-container .summary {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F9F9F9;
+  padding: .5em 1em;
+  border-radius: 20px;
+}
+
+.profile-modal .modal-content.load-success .profile-container .main-container .summary .summary-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.profile-modal .modal-content.load-success .profile-container .main-container .summary .summary-item i {
+  margin-right: .5em;
+}

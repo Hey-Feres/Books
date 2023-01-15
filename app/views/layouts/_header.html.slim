@@ -1,10 +1,13 @@
+= render '/user/profile_modal'
+
 div.app-header
   div.brand-container
     img src="/images/logo.png"
     a Open Books
   div.links-container
     - if current_user
-      = link_to 'Minha Conta', user_profile_path
+      a.open-profile-modal data-toggle="modal" data-target="#profileModal" data-profile="#{current_user.to_json}" Minha Conta
+      / = link_to 'Minha Conta', user_profile_path
       = link_to 'Estante', new_user_session_path
       = link_to 'Sair', destroy_user_session_path, method: :delete
     - else

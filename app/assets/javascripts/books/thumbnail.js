@@ -108,7 +108,7 @@ const runBookShelfRequest = (el) => {
   })
   .catch(error => {
     toggleLoader("hide", el)
-    runErrorAnimation(el)
+    $(el).animate("headShake")
     showNotification("Algo Deu Errado", "Não foi possivel adicionar o livro a sua estante.")
   })
 }

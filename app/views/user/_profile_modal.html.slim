@@ -1,6 +1,33 @@
-/h1 User#profile
-/ p Find me in app/views/user/profile.html.slim
-div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center"
+#profileModal.modal.fade.profile-modal tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true"
+  .modal-dialog role="document"
+    .modal-content.load-error
+      div
+      .content
+        i.lni.lni-sad
+        span Algo deu errado.
+    .modal-content.load-success
+      .close-modal-container
+        img.close-button data-dismiss="modal"
+      .profile-container
+        .main-container
+        	img#profileImage src="/images/default-avatar.jpg"
+        	span#profileName Bruno
+        	.summary
+        		.summary-item
+        			i.lni.lni-plus.bold
+        			span 10
+        		.summary-item
+        			i.lni.lni-star-filled
+        			span 3
+        		.summary-item
+        			i.lni.lni-heart-filled
+        			span 47
+        	/button.button.light-button#editProfileButton
+        		i.lni.lni-pencil
+        		| Editar
+
+
+/div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center"
 	div.system-shadow style="width: 95%; background: white; border-radius: 20px; height: 100vh; display: flex; justify-content: space-between; align-items: center"
 		div.dev-div style="padding: 5% 0; width: 30%; height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center"
 			div style="width: 90%; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; border-bottom: .5px solid #D8D8D8"
