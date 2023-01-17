@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :authors, except: %i[edit new]
 
   get 'user/profile'
+  get 'user/edit'
   get 'read', to: 'books#read'
   get 'load_pages', to: 'books#load_pages'
   get 'shelf_books/:id', to: 'shelf_books#show'

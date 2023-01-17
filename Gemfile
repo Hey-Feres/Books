@@ -39,6 +39,8 @@ gem 'activerecord-import'
 gem 'social-share-button'
 # Ransack will help you easily add searching to your Rails application, without any additional dependencies.
 gem 'ransack'
+# Styling a SVG document with CSS
+gem 'inline_svg'
 
 group :development, :test do
   # Byebug is a Ruby debugger.

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  skin_color: MyString
+  mouth_type: MyString
+  eye_type: MyString
+  hair_type: MyString
+  facial_hair_type: MyString
+  clothing_type: MyString
+  head_accessory_type: MyString
+  face_accessory_type: MyString
+
+two:
+  user: two
+  skin_color: MyString
+  mouth_type: MyString
+  eye_type: MyString
+  hair_type: MyString
+  facial_hair_type: MyString
+  clothing_type: MyString
+  head_accessory_type: MyString
+  face_accessory_type: MyString

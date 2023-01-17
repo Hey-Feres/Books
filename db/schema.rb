@@ -10,12 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_05_222923) do
+ActiveRecord::Schema.define(version: 2023_01_16_152953) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "avatars", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "skin_type"
+    t.string "mouth_type"
+    t.integer "eye_type"
+    t.string "eye_color"
+    t.integer "nose_type"
+    t.integer "hair_type"
+    t.string "hair_color"
+    t.integer "facial_hair_type"
+    t.string "facial_hair_color"
+    t.integer "clothing_type"
+    t.string "clothing_color"
+    t.integer "head_accessory_type"
+    t.string "head_accessory_color"
+    t.integer "face_accessory_type"
+    t.string "face_accessory_color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_avatars_on_user_id"
   end
 
   create_table "book_pages", force: :cascade do |t|
