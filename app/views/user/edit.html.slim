@@ -16,6 +16,9 @@ javascript:
 	$(document).ready(function() {
 		loadDefault()
 		loadPreviewOptions()
+		$("object#black").click(function(){
+			alert("Bananas")
+		})
 		$(".selectable-option-container").unbind("click").click(function(){
 			switch($(this).data("piece")){
 				case 'bodies':
@@ -153,6 +156,9 @@ javascript:
 	}
 
 css:
+	object{
+		pointer-events: none;
+	}
 	#avatar-pieces-selector-board {
 		height: 30em;
 		overflow-y: scroll;
@@ -198,32 +204,37 @@ css:
 		position: absolute;
 		z-index: 0;
 	}
-	object#eyes.default, object#eyes.angry, object#eyes.closed, object#eyes.cry, 
-	object#eyes.dizzy, object#eyes.happy, object#eyes.tired, object#eyes.wink {
+	object#eyes.default, object#eyes.angry,
+	object#eyes.closed, object#eyes.cry, 
+	object#eyes.dizzy, object#eyes.happy,
+	object#eyes.tired, object#eyes.wink {
 		width: 5em;
-		top: 11em;
+		/*top: 11em;*/
+		top: 4em;
 		position: absolute;
 		z-index: 9;
 	}
-	object#nose.default, object#nose.pointy, object#nose.rounded {
+	object#nose.default,
+	object#nose.pointy,
+	object#nose.rounded {
 		width: 1.5em;
-		top: 11em;
+		top: 4em;
 		position: absolute;
 		z-index: 9;
 	}
-	object#mouth.default, object#mouth.conserned, object#mouth.conserned-teeth,
-	object#mouth.default-big, object#mouth.grimace, object#mouth.kiss,
-	object#mouth.sad, object#mouth.serious, object#mouth.smile-teeth,
-	object#mouth.smile, object#mouth.surprise, object#mouth.tonge,
-	object#mouth.twinkle {
+	object#mouth.default, object#mouth.conserned,
+	object#mouth.conserned-teeth, object#mouth.default-big,
+	object#mouth.grimace, object#mouth.kiss, object#mouth.sad,
+	object#mouth.serious, object#mouth.smile-teeth, object#mouth.smile,
+	object#mouth.surprise, object#mouth.tonge, object#mouth.twinkle {
 		width: 3em;
-		top: 13.5em;
+		top: 6.5em;
 		position: absolute;
 		z-index: 9;
 	}
 	object#hair{
 		width: 16.25em;
-		top: 4em;
+		top: -2.99em;
 		position: absolute;
 		z-index: 9;
 	}
@@ -265,23 +276,25 @@ css:
 		position: absolute;
 		z-index: 10;
 	}
-	object#facial-hair.beard-short, object#facial-hair.beard-medium,
-	object#facial-hair.beard-long, object#facial-hair.beard-large {
+	object#facial-hair.beard-short,
+	object#facial-hair.beard-medium,
+	object#facial-hair.beard-long,
+	object#facial-hair.beard-large {
 		width: 7em;
-		top: 12.3em;
+		top: 6em;
 	}
 	object#facial-hair.beard-huge {
 		width: 8em;
-		top: 12.3em;
+		top: 5.9em;
 	}
 	object#facial-hair.moustache-handlebar,
 	object#facial-hair.moustache-horseshoe {
 		width: 3em;
-		top: 13.2em;
+		top: 6.2em;
 	}
 	object#facial-hair.moustache-chevron {
 		width: 2em;
-		top: 13.2em;
+		top: 6.2em;
 	}
 	/* Face Accessory */
 	object#face-accessory{
@@ -326,7 +339,11 @@ css:
 		top: 4em;
 	}
 	#avatarPreview{
+		border-radius: 15px 15px 0 0;
+		padding-top: .7rem;
 		background: lightblue;
+		position: relative;
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
