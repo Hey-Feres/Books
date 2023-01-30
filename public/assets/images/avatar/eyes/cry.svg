@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="26px" viewBox="0 0 85 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>eyes/cry</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="eyes/cry">
+            <path d="M85.0005,7 C85.0005,10.866 81.8665,14 78.0005,14 C74.1345,14 71.0005,10.866 71.0005,7 C71.0005,3.135 74.1345,0 78.0005,0 C81.8665,0 85.0005,3.135 85.0005,7" id="eye-right" fill="#00004D"></path>
+            <path d="M19,7 C19,10.866 15.866,14 12,14 C8.134,14 5,10.866 5,7 C5,3.135 8.134,0 12,0 C15.866,0 19,3.135 19,7" id="eye-left" fill="#00004D"></path>
+            <path d="M10,20.3704427 C10,23.1324427 7.762,25.3704427 5,25.3704427 C2.238,25.3704427 0,23.1324427 0,20.3704427 C0,17.6094427 5,11.3704427 5,11.3704427 C5,11.3704427 10,17.6094427 10,20.3704427" id="tear" fill="#23B2FF"></path>
+        </g>
+    </g>
+</svg>

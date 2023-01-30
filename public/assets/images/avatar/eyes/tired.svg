@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="14px" viewBox="0 0 86 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>eyes/tired</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="eyes/tired" transform="translate(0.000100, 0.000100)" fill="#00004D">
+            <path d="M12.817,12.817 C18.006,10.928 20.682,5.189 18.794,5.68434189e-14 L0,6.84 C1.888,12.03 7.628,14.706 12.817,12.817" id="eye-left"></path>
+            <path d="M72.5826,12.817 C67.3936,10.928 64.7166,5.189 66.6056,5.68434189e-14 L85.3996,6.84 C83.5106,12.03 77.7716,14.706 72.5826,12.817" id="eye-right"></path>
+        </g>
+    </g>
+</svg>

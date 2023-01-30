@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="14px" viewBox="0 0 80 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>eyes/dizzy</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="eyes/dizzy" transform="translate(1.000200, 0.999700)" stroke="#00004D" stroke-width="2">
+            <g id="eye-right" transform="translate(66.000000, 0.082100)">
+                <line x1="11.314" y1="-6.30606678e-14" x2="1.56319402e-13" y2="11.313" id="Stroke-1"></line>
+                <line x1="11.314" y1="11.3134" x2="1.56319402e-13" y2="0.0004" id="Stroke-3"></line>
+            </g>
+            <g id="eye-left">
+                <line x1="11.314" y1="5.06261699e-14" x2="1.52766688e-13" y2="11.313" id="Stroke-5"></line>
+                <line x1="11.314" y1="11.3135" x2="1.52766688e-13" y2="0.0005" id="Stroke-7"></line>
+            </g>
+        </g>
+    </g>
+</svg>

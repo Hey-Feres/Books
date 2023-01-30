@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="390px" viewBox="0 0 360 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>head/accessories/winter-cap</title>
+    <g id="head/accessories/winter-cap" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="winter-cap" transform="translate(98.470000, 52.168900)">
+            <path d="M160.53,68.992 C160.053,62.768 155.635,56.451 147.531,51.031 C139.993,21.687 113.362,0 81.667,0 C50.05,0 23.477,21.58 15.862,50.812 C7.547,56.279 3.013,62.684 2.53,68.992 C1.933,76.781 0.682,89.885 -2.84217094e-14,96.905 C2.735,97.104 5.313,97.848 7.634,99.037 C12.191,93.492 31.719,74.053 81.53,74.053 C131.341,74.053 150.869,93.492 155.426,99.038 C157.746,97.848 160.325,97.104 163.06,96.905 C162.378,89.885 161.127,76.781 160.53,68.992" id="Fill-1" fill="#FB344F"></path>
+            <path d="M15.863,50.7947 C28.824,42.2797 51.005,36.0527 81.53,36.0527 C94.515,36.0527 105.991,37.1797 115.889,39.1307" id="Stroke-4" stroke="#000066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

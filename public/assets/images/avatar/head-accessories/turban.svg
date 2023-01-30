@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="390px" viewBox="0 0 360 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>head/accessories/turban</title>
+    <g id="head/accessories/turban" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="turban" transform="translate(77.000000, 51.126650)">
+            <path d="M103,74.22075 L156.153,105.15775 C169.68,113.03075 177.145,127.49975 177.145,143.15075 L177.145,145.15175 C192.608,145.15175 206,132.61575 206,117.15175 L206,88.54575 C206,69.60775 197.229,51.73575 182.246,40.15075 L151.937,16.71375 C123.118,-5.57125 82.882,-5.57125 54.063,16.71375 L23.754,40.15075 C8.771,51.73575 0,69.60775 0,88.54575 L0,117.15175 C0,132.61575 13.355,145.15175 28.819,145.15175 L28.819,143.15075 C28.819,127.49975 36.32,113.03075 49.847,105.15775 L103,74.22075 Z" id="Fill-1" fill="#2384F5"></path>
+            <line x1="103" y1="74.22075" x2="161.773" y2="40.01275" id="Stroke-4" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+            <path d="M88.5293,33.21495 C88.5293,33.21495 18.1823,92.97395 8.6593,101.14095 C3.7103,105.38495 1.0003,110.12795 1.0003,116.49995" id="Stroke-6" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M140.2295,52.55285 C140.2295,52.55285 187.8175,92.97385 197.3405,101.14085 C202.2905,105.38485 204.9995,110.12785 204.9995,116.49985" id="Stroke-8" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

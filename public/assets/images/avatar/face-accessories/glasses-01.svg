@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="50px" viewBox="0 0 120 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>accessories/glasses-01</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="accessories/glasses-01" transform="translate(2.000000, 2.000000)" stroke="#00004D" stroke-width="4">
+            <g id="glasses-01">
+                <path d="M116.0001,23.0003 C116.0001,35.7023 105.7021,46.0003 93.0001,46.0003 C80.2981,46.0003 70.0001,35.7023 70.0001,23.0003 C70.0001,10.2973 80.2981,0.0003 93.0001,0.0003 C105.7021,0.0003 116.0001,10.2973 116.0001,23.0003 Z" id="Stroke-1"></path>
+                <path d="M0.0001,23.0003 C0.0001,35.7023 10.2971,46.0003 23.0001,46.0003 C35.7031,46.0003 46.0001,35.7023 46.0001,23.0003 C46.0001,10.2973 35.7031,0.0003 23.0001,0.0003 C10.2971,0.0003 0.0001,10.2973 0.0001,23.0003 Z" id="Stroke-3"></path>
+                <path d="M44.5748,15.0179 C46.2898,9.2259 51.6518,4.9999 57.9998,4.9999 C64.3488,4.9999 69.7098,9.2259 71.4258,15.0179" id="Stroke-5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

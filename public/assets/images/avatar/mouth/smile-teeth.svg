@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="60px" viewBox="0 0 80 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mouth/smile-teeth</title>
+    <g id="mouth/smile-teeth" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="smile-teeth" transform="translate(15.000000, 9.499700)">
+            <path d="M50,-0.0003 C50,13.8077 38.807,24.9997 25,24.9997 C11.193,24.9997 0,13.8077 0,-0.0003 L50,-0.0003 Z" id="Fill-1" fill="#AE1328"></path>
+            <path d="M38.9912,20.7204 C35.3842,17.1864 30.4492,14.9994 25.0002,14.9994 C19.5512,14.9994 14.6162,17.1864 11.0092,20.7204 C15.0022,23.4224 19.8162,24.9994 25.0002,24.9994 C30.1832,24.9994 34.9992,23.4224 38.9912,20.7204" id="Fill-4" fill="#FB344F"></path>
+            <path d="M40,7.9997 L10,7.9997 C7.238,7.9997 5,5.7617 5,2.9997 L5,-0.0003 L45,-0.0003 L45,2.9997 C45,5.7617 42.762,7.9997 40,7.9997" id="Fill-6" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

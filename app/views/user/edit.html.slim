@@ -19,6 +19,9 @@ javascript:
 		$("object#black").click(function(){
 			alert("Bananas")
 		})
+		$("#facial-hair-color-selector").children('.selectable-color-option').click(function(){
+			alert($(this).data("color"))
+		})
 		$(".selectable-option-container").unbind("click").click(function(){
 			switch($(this).data("piece")){
 				case 'bodies':
@@ -100,13 +103,6 @@ javascript:
 	const loadDefault = () => {
 		$("object#body").attr('data', '/assets/images/avatar/bodies/white.svg')
 		$("object#eyes").attr('data', '/assets/images/avatar/eyes/default.svg')
-		// $("object#face-accessory").attr('data', '/assets/images/avatar/face-accessories/glasses-01.svg')
-		// $("object#nose").attr('data', '/assets/images/avatar/nose/default.svg')
-		// $("object#mouth").attr('data', '/assets/images/avatar/mouth/default.svg')
-		// $("object#hair").attr('data', '/assets/images/avatar/hair/short/01.svg')
-		// $("object#head-acessory").attr('data', '/assets/images/avatar/head-accessories/hat.svg')
-		// $("object#clothing").attr('data', '/assets/images/avatar/clothing/t-shirt.svg')
-		// $("object#facial-hair").attr('data', '/assets/images/avatar/facial-hair/beard-short.svg')
 	}
 
 	const loadPreviewOptions = () => {
@@ -124,7 +120,7 @@ javascript:
 		selectorList(eyes, 'eyes')
 		selectorList(nose, 'nose')
 		selectorList(mouth, 'mouth')
-		selectorList(facialHair, 'facial-hair')
+		selectorList(facialHair, 'facial-hair', true)
 		selectorList(faceAccessories, 'face-accessories')
 		selectorList(headAccessories, 'head-accessories')
 		selectorList(hair, 'hair')
@@ -134,17 +130,17 @@ javascript:
 	const selectorList = (selectableData, pieceName, withColors) => {
 		const selectorId = `${pieceName}`
 
-		// if(withColors) {
-		// 	const colors = {white: '#FFFFFF', black: '#000000', blue: '#2384F5', yellow: '#FFCA00', green: '#80C43B', red: '#FB344F', pink: '#FF64C8', purple: '#AE0BFF', gray: '#DBDBE6', brown: '#9B5921', light_blue: '#9BC5FF', light_yellow: '#FFEA99', light_green: '#C2E3A1', light_red: '#FD9DAA', light_pink: '#FFC1E9', light_purple: '#E5B1FF', light_gray: '#F5F5F8', dark_blue: '#000066', dark_brown: '#6A2405', dark_gray: '#9292B3', golden: '#FFCA00', blonde: '#FFDC78'}
+		if(withColors) {
+			const colors = {white: '#FFFFFF', black: '#000000', blue: '#2384F5', yellow: '#FFCA00', green: '#80C43B', red: '#FB344F', pink: '#FF64C8', purple: '#AE0BFF', gray: '#DBDBE6', brown: '#9B5921', light_blue: '#9BC5FF', light_yellow: '#FFEA99', light_green: '#C2E3A1', light_red: '#FD9DAA', light_pink: '#FFC1E9', light_purple: '#E5B1FF', light_gray: '#F5F5F8', dark_blue: '#000066', dark_brown: '#6A2405', dark_gray: '#9292B3', golden: '#FFCA00', blonde: '#FFDC78'}
 
-		// 	$("#avatar-pieces-selector-board").append(`<center><div class='selectable-color' id='${selectorId}-color-selector'></div></center>`)
+			$("#avatar-pieces-selector-board").append(`<center><div class='selectable-color' id='${selectorId}-color-selector'></div></center>`)
 
-		// 	$(`#${selectorId}-color-selector`).append(
-		// 		Object.keys(colors).map((key, index) => {
-		// 			return(`<div class='selectable-color-option' style='background: ${colors[key]}'></div>`)
-		// 		}).join(' ')
-		// 	)
-		// }
+			$(`#${selectorId}-color-selector`).append(
+				Object.keys(colors).map((key, index) => {
+					return(`<div class='selectable-color-option' data-color='${colors[key]}' style='background: ${colors[key]}'></div>`)
+				}).join(' ')
+			)
+		}
 
 		$("#avatar-pieces-selector-board").append(`<center><div class='selectable-options' id='${selectorId}-selector'></div></center>`)
 
@@ -181,10 +177,17 @@ css:
 		border-radius: 10px;
 		width: 8em;
 		height: 5em;
+		transition: 500ms;
+		border: 1px solid transparent;
+	}
+	.selectable-option-container:hover {
+		border: 1px solid #D8D8D8;
+		cursor: pointer;
 	}
 	.selectable-color {
 		width: 100%;
 		margin: 0 0 1em 0;
+		padding: 0 1em;
   	overflow: auto;
   	white-space: nowrap;
 	}
@@ -193,6 +196,7 @@ css:
 		height: 3rem;
 		border-radius: 50%;
 		display: inline-block;
+		cursor: pointer;
 	}
 	::-webkit-scrollbar {
 	  width: 0px;
@@ -209,8 +213,7 @@ css:
 	object#eyes.dizzy, object#eyes.happy,
 	object#eyes.tired, object#eyes.wink {
 		width: 5em;
-		/*top: 11em;*/
-		top: 4em;
+		top: 4.5em;
 		position: absolute;
 		z-index: 9;
 	}
@@ -228,13 +231,13 @@ css:
 	object#mouth.serious, object#mouth.smile-teeth, object#mouth.smile,
 	object#mouth.surprise, object#mouth.tonge, object#mouth.twinkle {
 		width: 3em;
-		top: 6.5em;
+		top: 7em;
 		position: absolute;
 		z-index: 9;
 	}
 	object#hair{
-		width: 16.25em;
-		top: -2.99em;
+		width: 16.40em;
+		top: -2.32em;
 		position: absolute;
 		z-index: 9;
 	}
@@ -245,31 +248,31 @@ css:
 	}
 	object#clothing.t-shirt{
 		width: 15.1em;
-		top: 16.59em;
+		top: 10em;
 	}
 	object#clothing.t-shirt-v-neck{
 		width: 15.1em;
-		top: 16.7em;
+		top: 10.4em;
 	}
 	object#clothing.t-shirt-crew-neck{
 		width: 15.1em;
-		top: 16.9em;
+		top: 10.55em;
 	}
 	object#clothing.sweater{
 		width: 15.1em;
-		top: 16.59em;
+		top: 10em;
 	}
 	object#clothing.shirt{
 		width: 15em;
-		top: 15.95em;
+		top: 9.5em;
 	}
 	object#clothing.turtleneck{
 		width: 15em;
-		top: 15.45em;
+		top: 9em;
 	}
 	object#clothing.hoodie{
 		width: 15em;
-		top: 15.45em;
+		top: 9em;
 	}
 	/* Facial Hair */
 	object#facial-hair{
@@ -281,7 +284,7 @@ css:
 	object#facial-hair.beard-long,
 	object#facial-hair.beard-large {
 		width: 7em;
-		top: 6em;
+		top: 5.95em;
 	}
 	object#facial-hair.beard-huge {
 		width: 8em;
@@ -290,11 +293,11 @@ css:
 	object#facial-hair.moustache-handlebar,
 	object#facial-hair.moustache-horseshoe {
 		width: 3em;
-		top: 6.2em;
+		top: 6.7em;
 	}
 	object#facial-hair.moustache-chevron {
 		width: 2em;
-		top: 6.2em;
+		top: 6.7em;
 	}
 	/* Face Accessory */
 	object#face-accessory{
@@ -303,15 +306,15 @@ css:
 	}
 	object#face-accessory.glasses-01 {
 		width: 6.5em;
-		top: 10.2em;
+		top: 3.8em;
 	}
 	object#face-accessory.glasses-02 {
 		width: 6.5em;
-		top: 10.6em;
+		top: 4em;
 	}
 	object#face-accessory.glasses-03 {
 		width: 7em;
-		top: 10.4em;	
+		top: 4em;
 	}
 	/* Head Accessory */
 	object#head-accessory{
@@ -320,23 +323,23 @@ css:
 	}
 	object#head-accessory.cap{
 		width: 17em;
-		top: 3.6em;
+		top: -2.75em;
 	}
 	object#head-accessory.winter-cap{
 		width: 17em;
-		top: 3.67em;
+		top: -2.65em;
 	}
 	object#head-accessory.turban{
 		width: 17em;
-		top: 3.67em;
+		top: -2.7em;
 	}
 	object#head-accessory.hijab{
 		width: 17em;
-		top: 3.67em;
+		top: -2.7em;
 	}
 	object#head-accessory.hat{
 		width: 16.25em;
-		top: 4em;
+		top: -2.3em;
 	}
 	#avatarPreview{
 		border-radius: 15px 15px 0 0;

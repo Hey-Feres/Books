@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="60px" viewBox="0 0 80 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mouth/grimace</title>
+    <g id="mouth/grimace" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="grimace" transform="translate(18.000100, 9.499400)">
+            <path d="M34,20 L10,20 C4.478,20 0,15.523 0,10 C0,4.478 4.478,0 10,0 L34,0 C39.522,0 44,4.478 44,10 C44,15.523 39.522,20 34,20" id="Fill-1" fill="#FFFFFF"></path>
+            <line x1="1" y1="10" x2="40" y2="10" id="Stroke-4" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

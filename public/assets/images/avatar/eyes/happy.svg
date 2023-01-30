@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="14px" viewBox="0 0 82 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>eyes/happy</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="eyes/happy" transform="translate(0.000100, 0.928500)" fill="#00004D">
+            <path d="M74,10 C76.541,10 78.895,10.795 80.834,12.143 C81.569,10.934 82,9.52 82,8 C82,3.582 78.418,0 74,0 C69.582,0 66,3.582 66,8 C66,9.52 66.431,10.934 67.166,12.143 C69.105,10.795 71.459,10 74,10" id="eye-right"></path>
+            <path d="M8,10 C10.541,10 12.895,10.795 14.834,12.143 C15.569,10.934 16,9.52 16,8 C16,3.582 12.418,0 8,0 C3.582,0 0,3.582 0,8 C0,9.52 0.431,10.934 1.166,12.143 C3.105,10.795 5.459,10 8,10" id="eye-left"></path>
+        </g>
+    </g>
+</svg>

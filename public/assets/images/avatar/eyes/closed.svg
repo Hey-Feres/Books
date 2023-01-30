@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="8px" viewBox="0 0 87 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>eyes/closed</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="eyes/closed" transform="translate(1.500000, 1.000000)" stroke="#00004D" stroke-width="2">
+            <path d="M84.336,0 C82.793,3.532 79.269,6 75.168,6 C71.067,6 67.543,3.532 66,0" id="eye-right"></path>
+            <path d="M18.336,0 C16.793,3.532 13.269,6 9.168,6 C5.067,6 1.543,3.532 0,0" id="eye-left"></path>
+        </g>
+    </g>
+</svg>

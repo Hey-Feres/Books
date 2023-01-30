@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="140px" viewBox="0 0 320 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>clothing/hoodie</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="clothing/hoodie" transform="translate(0.000000, 0.936000)">
+            <g id="hoodie">
+                <path d="M320,109.304 L290.963,67.299 C280.352,51.949 264.707,40.79 246.736,35.756 L244.525,35.136 L235.581,17.776 C233.379,13.501 229.711,10.163 225.248,8.373 L205,0.25 L205,24.304 C204.997,24.31 204.996,24.314 204.993,24.32 L160.256,69.058 C160.17,69.058 160.086,69.064 160,69.064 L115,24.064 L115,2.84217094e-14 L94.752,8.124 C90.289,9.914 86.621,13.252 84.419,17.526 L75.325,35.178 L73.263,35.756 C55.293,40.79 39.648,51.949 29.036,67.299 L0,109.304 L0,139.064 L320,139.064 L320,109.304 Z" id="Fill-1" fill="#80C43B"></path>
+                <polyline id="Stroke-4" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="75.3252 35.1781 160.0002 84.1871 221.2912 48.8931"></polyline>
+                <path d="M137,124.1869 L137,124.1869 C135.343,124.1869 134,122.8429 134,121.1869 L134,69.2149 L140,72.6109 L140,121.1869 C140,122.8429 138.657,124.1869 137,124.1869" id="Fill-8" fill="#00004D"></path>
+                <path d="M183,103.1869 L183,103.1869 C181.343,103.1869 180,101.8429 180,100.1869 L180,72.6699 L186,69.2149 L186,100.1869 C186,101.8429 184.657,103.1869 183,103.1869" id="Fill-10" fill="#00004D"></path>
+            </g>
+            <line x1="107" y1="16.0638" x2="115" y2="24.0638" id="Stroke-6" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="140px" viewBox="0 0 320 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>clothing/turtleneck</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="turtleneck">
+            <path d="M320,110.2403 L290.964,68.2353 C280.352,52.8853 264.707,41.7263 246.736,36.6923 L210,26.4003 L210,5.0003 C210,2.2383 207.762,0.0003 205,0.0003 L205,5.0013 C192.465,14.4173 176.885,20.0003 160,20.0003 C143.115,20.0003 127.535,14.4173 115,5.0013 L115,0.0003 C112.238,0.0003 110,2.2383 110,5.0003 L110,26.4003 L73.264,36.6923 C55.293,41.7263 39.648,52.8853 29.036,68.2353 L0,110.2393 L0,140.0003 L320,140.0003 L320,110.2403 Z" id="Fill-1" fill="#80C43B"></path>
+            <path d="M186.458,40.7012 C178.229,43.8042 169.313,45.5012 160,45.5012 C140.79,45.5012 123.266,38.2782 109.997,26.4002" id="Stroke-4" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

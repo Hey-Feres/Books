@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="60px" viewBox="0 0 80 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mouth/conserned-teeth</title>
+    <g id="mouth/conserned-teeth" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="conserned-teeth" transform="translate(15.000000, 9.499700)">
+            <path d="M0,24.9997 C0,11.1927 11.193,-0.0003 25,-0.0003 C38.807,-0.0003 50,11.1927 50,24.9997 L0,24.9997 Z" id="Fill-1" fill="#AE1328"></path>
+            <path d="M25,-0.0003 C17.76,-0.0003 11.242,3.0817 6.676,7.9997 L43.324,7.9997 C38.758,3.0817 32.24,-0.0003 25,-0.0003" id="Fill-4" fill="#FFFFFF"></path>
+            <path d="M25,14.9997 C17.602,14.9997 11.157,19.0277 7.697,24.9997 L42.303,24.9997 C38.843,19.0277 32.398,14.9997 25,14.9997" id="Fill-7" fill="#FB344F"></path>
+        </g>
+    </g>
+</svg>

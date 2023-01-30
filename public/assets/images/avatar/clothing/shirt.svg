@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="129px" viewBox="0 0 320 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>clothing/shirt</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="shirt" transform="translate(-0.000100, 0.000400)">
+            <path d="M290.964,57.235 C280.352,41.884 264.707,30.726 246.736,25.692 L220.057,18.217 L209,0 L205,0 L205,7.49 L160,49 L159.999,48.999 L115,7.49 L115,0 L111,0 L99.944,18.217 L73.264,25.692 C55.293,30.726 39.649,41.884 29.036,57.235 L0,99.239 L0,129 L320,129 L320,99.24 L290.964,57.235 Z" id="Fill-1" fill="#80C43B"></path>
+            <polyline id="Stroke-4" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="99.9435 18.2174 126.2505 72.7494 160.0005 48.9994"></polyline>
+            <polyline id="Stroke-6" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="160.0001 48.9997 193.7501 72.7497 211.2971 36.3747"></polyline>
+        </g>
+    </g>
+</svg>

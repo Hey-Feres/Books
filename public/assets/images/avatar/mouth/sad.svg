@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="60px" viewBox="0 0 80 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mouth/sad</title>
+    <g id="mouth/sad" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M52.5595,13.4997 C49.9015,17.7027 45.2125,20.4927 39.8725,20.4927 C34.6995,20.4927 30.1375,17.8737 27.4405,13.8887" id="sad" stroke="#00004D" stroke-width="2" transform="translate(40.000000, 16.996200) rotate(-180.000000) translate(-40.000000, -16.996200) "></path>
+    </g>
+</svg>

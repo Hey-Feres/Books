@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="115px" viewBox="0 0 320 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>clothing/t-shirt</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="clothing/t-shirt" fill="#80C43B">
+            <path d="M320,85.24 L290.963,43.235 C280.352,27.885 264.707,16.726 246.736,11.692 L205,0 C205,24.853 184.853,45 160,45 L160,45 C135.147,45 115,24.853 115,0 L73.263,11.692 C55.293,16.726 39.648,27.885 29.036,43.235 L0,85.24 L0,115 L320,115 L320,85.24 Z" id="t-shirt"></path>
+        </g>
+    </g>
+</svg>

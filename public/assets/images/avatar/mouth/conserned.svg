@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="60px" viewBox="0 0 80 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mouth/conserned</title>
+    <g id="mouth/conserned" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="conserned" transform="translate(20.000000, 9.499700)">
+            <path d="M0,19.9997 C0,8.9537 8.954,-0.0003 20,-0.0003 C31.046,-0.0003 40,8.9537 40,19.9997 L0,19.9997 Z" id="Fill-1" fill="#AE1328"></path>
+            <path d="M20,11.9997 C14.245,11.9997 9.254,15.2437 6.738,19.9997 L33.262,19.9997 C30.746,15.2437 25.755,11.9997 20,11.9997" id="Fill-4" fill="#FB344F"></path>
+        </g>
+    </g>
+</svg>

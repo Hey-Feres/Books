@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="16px" viewBox="0 0 82 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>eyes/default</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="eyes/default" fill="#00004D">
+            <path d="M82.0005,8 C82.0005,12.418 78.4185,16 74.0005,16 C69.5825,16 66.0005,12.418 66.0005,8 C66.0005,3.582 69.5825,0 74.0005,0 C78.4185,0 82.0005,3.582 82.0005,8" id="eye-right"></path>
+            <path d="M16,8 C16,12.418 12.418,16 8,16 C3.582,16 0,12.418 0,8 C0,3.582 3.582,0 8,0 C12.418,0 16,3.582 16,8" id="eye-left"></path>
+        </g>
+    </g>
+</svg>

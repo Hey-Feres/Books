@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="390px" viewBox="0 0 360 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>head/accessories/hijab</title>
+    <g id="head/accessories/hijab" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hijab" transform="translate(62.000000, 65.999800)">
+            <polygon id="part-2" fill="#000066" points="197.6406 68.7988 38.3596 68.7988 58.3596 21.9998 177.6406 21.9998"></polygon>
+            <path d="M188,124 C188,162.659 156.66,194 118,194 C79.34,194 48,162.659 48,124 L48,93.999 C48,55.34 79.34,24 118,24 C156.66,24 188,55.34 188,93.999 L188,124 Z M221,103 C221,57.673 184.936,0 118,0 C51.064,0 15,57.673 15,103 C15,207.22 0.419,237.301 0.419,237.301 L21.492,251.321 C54.923,273.565 96.956,273.708 129.817,254.633 L155.591,290.523 L235.726,237.427 C235.726,237.427 221,216.454 221,103 L221,103 Z" id="part-1" fill="#2384F5"></path>
+            <path d="M174.5684,199.9013 C160.0914,214.3793 140.0914,223.3333 118.0004,223.3333 C73.8174,223.3333 38.0004,187.5153 38.0004,143.3333 L38.0004,105.6663 C38.0004,61.4833 73.8174,25.6663 118.0004,25.6663" id="Stroke-10" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M129.8174,254.6328 C140.8664,248.2188 150.8794,239.6318 159.1774,228.9828" id="Stroke-12" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

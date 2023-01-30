@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="16px" viewBox="0 0 84 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>eyes/wink</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="eyes/wink" transform="translate(0.000100, 0.000000)">
+            <path d="M64.4999,8 C66.0429,4.469 69.5669,2 73.6679,2 C77.7689,2 81.2929,4.469 82.8359,8" id="eye-right" stroke="#00004D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M16,8 C16,12.419 12.418,16 8,16 C3.582,16 4.54747351e-13,12.419 4.54747351e-13,8 C4.54747351e-13,3.582 3.582,0 8,0 C12.418,0 16,3.582 16,8" id="eye-left" fill="#00004D"></path>
+        </g>
+    </g>
+</svg>
